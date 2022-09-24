@@ -20,26 +20,30 @@ order += "memory"
 order += "tztime local"
 
 volume master {
-		format = "VOL: %volume"
-        format_muted = "MUT(%volume)"
+		format = "墳 %volume"
+        format_muted = "婢 (%volume)"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
 read_file BRIGHTNESS {
-        format = "BRI: %content"
+        format = "盛 %content"
         path = "/sys/class/backlight/intel_backlight/brightness"
         max_characters = 5
 }
 
 wireless _first_ {
-        format_up = "NET (%quality at %essid) %ip"
-        format_down = "NET down"
+        format_up = "直 (%quality at %essid) %ip"
+        format_down = "睊 down"
 }
 
 battery all {
         format = "%status %percentage %remaining"
+		status_chr = ""
+		status_bat = ""
+		status_unk = ""
+		status_full = ""
 }
 
 disk "/" {

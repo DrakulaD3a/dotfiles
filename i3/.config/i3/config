@@ -4,7 +4,7 @@
 #######################
 
 # Default system font
-font pango:monospace 8
+font Hack Nerd Font 8
 
 # Default modkey
 set $mod Mod1

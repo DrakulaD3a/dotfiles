@@ -14,6 +14,7 @@ set autoindent
 set smartindent
 set scrolloff=8
 set nowrap
+set termguicolors
 
 autocmd Filetype html setlocal ts=2 sw=2 sts=2
 autocmd Filetype css setlocal ts=2 sw=2 sts=2
