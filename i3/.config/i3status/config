@@ -1,0 +1,58 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "disk /"
+order += "wireless _first_"
+order += "read_file BRIGHTNESS"
+order += "volume master"
+order += "battery all"
+order += "memory"
+order += "tztime local"
+
+volume master {
+		format = "VOL: %volume"
+        format_muted = "MUT(%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+read_file BRIGHTNESS {
+        format = "BRI: %content"
+        path = "/sys/class/backlight/intel_backlight/brightness"
+        max_characters = 5
+}
+
+wireless _first_ {
+        format_up = "NET (%quality at %essid) %ip"
+        format_down = "NET down"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+}
+
+disk "/" {
+        format = "%avail"
+}
+
+memory {
+        format = "MEM %percentage_used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+tztime local {
+        format = "%d.%m.%Y %H:%M"
+}
+
