@@ -1,0 +1,14 @@
+# Start XDG autostart .desktop files using dex. See also
+exec --no-startup-id dex --autostart --environment i3
+
+# Add multiple keyboard layouts
+exec --no-startup-id setxkbmap -layout 'us,cz' -variant altgr-intl,qwerty -option 'grp:win_space_toggle'
+
+# Set powersavings for display
+exec --no-startup-id xset s 480 dpms 600 600 600
+
+# Add wallpaper
+exec --no-startup-id feh --bg-fill ~/.config/wallpapers/alena-aenami-crater3.jpg
+
+# Restore monitor layout
+exec --no-startup-id bash ~/.config/autostart/monitors.sh
