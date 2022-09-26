@@ -15,6 +15,10 @@ set smartindent
 set scrolloff=8
 set nowrap
 set termguicolors
+set noswapfile
+set nobackup
+set undodir="$HOME/.local/share/nvim/undo/"
+set undofile
 
 autocmd Filetype html setlocal ts=2 sw=2 sts=2
 autocmd Filetype css setlocal ts=2 sw=2 sts=2
@@ -27,7 +31,7 @@ let g:netrw_liststyle=3
 
 
 " Spawn netrw on side
-nnoremap <leader>pv <cmd>Ex<CR>
+nnoremap <leader>e <cmd>Ex<CR>
 
 " Spawn terminal
 nnoremap <F5> <cmd>split term://bash<CR><C-w>J7<C-w>-i

@@ -103,3 +103,5 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="vim"
 alias hx="helix"
+
+eval $(thefuck --alias)
