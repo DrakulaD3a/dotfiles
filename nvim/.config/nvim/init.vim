@@ -1,3 +1,12 @@
+call plug#begin()
+
+Plug 'folke/tokyonight.nvim'
+Plug 'alx741/vim-rustfmt'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'uga-rosa/ccc.nvim', {'branch': '0.7.2'}
+
+call plug#end()
+
 colorscheme tokyonight
 
 set path+=**
@@ -29,7 +38,6 @@ let g:netrw_banner=0
 let g:netrw_winsize=12
 let g:netrw_liststyle=3
 
-
 " Spawn netrw on side
 nnoremap <leader>e <cmd>Ex<CR>
 
@@ -47,14 +55,6 @@ nnoremap <leader>cp <cmd>CccPick<CR>
 " Create a new html file
 nnoremap <leader>html :-1read ~/.config/nvim/templates/html<CR>5j3wa
 
-call plug#begin()
-
-Plug 'folke/tokyonight.nvim'
-Plug 'alx741/vim-rustfmt'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'uga-rosa/ccc.nvim', {'branch': '0.7.2'}
-
-call plug#end()
 
 function! CheckBackSpace() abort
     let col = col('.') - 1
