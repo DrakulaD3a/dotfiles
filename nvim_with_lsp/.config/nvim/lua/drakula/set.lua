@@ -30,6 +30,8 @@ o.undofile = true
 
 o.updatetime = 50
 
+o.mouse = "a"
+
 -- netrw
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3

@@ -1,1 +1,4 @@
-zsh/.config/zsh/.zcomdump-*
+**/.config/zsh/*
+!.zshrc
+
+**/.uuid

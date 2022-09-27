@@ -18,16 +18,16 @@ order += "memory"
 order += "tztime local"
 
 volume master {
-		format = "🔈%volume"
-        format_muted = "🔇(%volume)"
+		format = "墳%volume"
+        format_muted = "婢(%volume)"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
 ethernet _first_ {
-        format_up = "ᯤ %ip (%speed)"
-        format_down = "ᯤ down"
+        format_up = " %ip (%speed)"
+        format_down = " down"
 }
 
 battery all {
@@ -35,13 +35,13 @@ battery all {
 }
 
 disk "/" {
-        format = "🖴 %avail"
+        format = " %avail"
 }
 
 memory {
-        format = "MEM %percentage_used"
+        format = " %percentage_used"
         threshold_degraded = "10%"
-        format_degraded = "MEMORY: %free"
+        format_degraded = " %free"
 }
 
 tztime local {
