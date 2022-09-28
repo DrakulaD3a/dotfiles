@@ -1,4 +1,5 @@
 local o = vim.opt
+local g = vim.g
 
 o.wildmenu = true
 
@@ -33,5 +34,5 @@ o.updatetime = 50
 o.mouse = "a"
 
 -- netrw
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
+g.netrw_banner = 0
+g.netrw_liststyle = 3

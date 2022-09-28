@@ -28,10 +28,10 @@ set noswapfile
 set nobackup
 set undodir="$HOME/.local/share/nvim/undo/"
 set undofile
-set mouse=a
 
 autocmd Filetype html setlocal ts=2 sw=2 sts=2
 autocmd Filetype css setlocal ts=2 sw=2 sts=2
+autocmd Filetype config setlocal ts=2 sw=2 sts=2
 
 let mapleader=" "
 

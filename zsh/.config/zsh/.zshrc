@@ -99,9 +99,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-alias vi="vim"
-alias vim="nvim"
-alias hx="helix"
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# TMUX Aliases
+alias \
+  tn="tmux new" \
+  ta="tmux attach"
 
 eval $(thefuck --alias)
