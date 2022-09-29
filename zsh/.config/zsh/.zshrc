@@ -108,4 +108,6 @@ alias \
   tn="tmux new" \
   ta="tmux attach"
 
+alias journal="nvim --clean ~/JOURNAL.md"
+
 eval $(thefuck --alias)
