@@ -9,6 +9,3 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 
 # Add wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/alena-aenami-crater3.jpg
-
-# Restore monitor layout
-exec --no-startup-id bash ~/.config/autostart/monitors.sh

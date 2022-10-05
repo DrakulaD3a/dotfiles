@@ -1,7 +1,0 @@
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
-
-alias \
-	tn="tmux new" \
-	ta="tmux attach"
-
-alias journal="nvim --clean ~/JOURNAL.md"
