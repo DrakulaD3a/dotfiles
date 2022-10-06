@@ -2,3 +2,5 @@
 !.zshrc
 
 **/.uuid
+
+/nvim/plugin
