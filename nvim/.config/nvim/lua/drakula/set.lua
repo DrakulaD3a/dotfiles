@@ -36,3 +36,4 @@ o.mouse = "a"
 -- netrw
 g.netrw_banner = 0
 g.netrw_liststyle = 3
+g.netrw_list_hide = ".git"
