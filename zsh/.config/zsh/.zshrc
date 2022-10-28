@@ -106,7 +106,8 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 # TMUX Aliases
 alias \
   tn="tmux new" \
-  ta="tmux attach"
+  ta="tmux attach" \
+  td="tmux detach"
 
 alias journal="nvim --clean ~/JOURNAL.md"
 
