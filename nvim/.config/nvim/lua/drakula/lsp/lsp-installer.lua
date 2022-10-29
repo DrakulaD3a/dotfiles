@@ -19,7 +19,7 @@ end
 
 local servers = {
   "sumneko_lua",
-  "cssls",
+  "clangd",
   "html",
   "tsserver",
   "rust_analyzer",
