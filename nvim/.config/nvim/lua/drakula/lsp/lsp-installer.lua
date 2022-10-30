@@ -23,6 +23,7 @@ local servers = {
   "html",
   "tsserver",
   "rust_analyzer",
+  "cssls",
 }
 
 lsp_installer.setup()
