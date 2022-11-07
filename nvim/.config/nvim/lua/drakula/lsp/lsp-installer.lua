@@ -24,6 +24,7 @@ local servers = {
   "tsserver",
   "rust_analyzer",
   "cssls",
+  "cmake",
 }
 
 lsp_installer.setup()

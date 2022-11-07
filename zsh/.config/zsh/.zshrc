@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
+export PATH="/home/drakula/.local/bin:$PATH"
+
 # TMUX Aliases
 alias \
   tn="tmux new" \
