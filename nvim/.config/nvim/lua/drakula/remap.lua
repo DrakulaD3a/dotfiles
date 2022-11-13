@@ -17,3 +17,6 @@ vnoremap("<F5>", "<Esc><cmd>split term://bash<CR><C-w>J7<C-w>-i")
 tnoremap("<F5>", "<C-\\><C-n><cmd>q<CR>")
 
 nnoremap("<leader>html", "<cmd>-1read ~/.config/nvim/templates/html<CR>5j3wa")
+
+nnoremap("<leader>sv", "<cmd>vertical split<CR>")
+nnoremap("<leader>sh", "<cmd>vertical split<CR>")
