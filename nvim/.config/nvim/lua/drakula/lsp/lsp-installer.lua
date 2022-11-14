@@ -21,6 +21,7 @@ local servers = {
   "sumneko_lua",
   "clangd",
   "html",
+  "eslint",
   "tsserver",
   "rust_analyzer",
   "cssls",
