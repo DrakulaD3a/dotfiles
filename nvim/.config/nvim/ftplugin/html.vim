@@ -4,4 +4,4 @@ setlocal softtabstop=2
 
 let mapleader = " "
 
-nnoremap <leader>new :-1read ~/.config/nvim/templates/html/new<CR>5j3wa
+nnoremap <leader>new :-1read ~/.config/nvim/templates/html<CR>5j3wa
