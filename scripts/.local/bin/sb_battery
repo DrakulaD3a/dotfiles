@@ -13,4 +13,4 @@ esac
 
 capacity="$(cat "$battery/capacity" 2>&1)"
 
-printf "%s%d%%\n" "$status" "$capacity"
+printf "%s %d%%\n" "$status" "$capacity"
