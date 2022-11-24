@@ -1,0 +1,6 @@
+#!/bin/sh
+
+brightness="$(cat /sys/class/backlight/intel_backlight/actual_brightness)"
+max_brightness="$(cat /sys/class/backlight/intel_backlight/max_brightness)"
+
+printf "盛 %d%%" "$((brightness * 100 / max_brightness))"
