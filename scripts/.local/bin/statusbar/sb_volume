@@ -1,26 +1,13 @@
 #!/bin/sh
 
-vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+vol="$(pulsemixer --get-volume)"
 
-# If muted, print 🔇 and exit.
-if [ "$vol" != "${vol%\[MUTED]}" ]; then
-	printf "婢 0%%";
-	exit
-fi
-
-vol="${vol#Volume: }"
-split() {
-	# For ommiting the . without calling and external program.
-	IFS=$2
-	set -- $1
-	printf '%s' "$@"
-}
-vol="$(split "$vol" ".")"
-vol="${vol##0}"
+readarray -d ' ' -t act_vol<<<"$vol"
 
 case 1 in
-	$((vol >= 1)) ) icon="墳" ;;
+	$((act_vol >= 1)) ) icon="" ;;
 	* ) icon="婢" && exit ;;
 esac
 
-printf "%s %d%%" "$icon" "$vol"
+[[ $(pulsemixer --get-mute) == 1 ]] && printf "婢 0%%" || printf "墳 %d%%" "$act_vol"
+
