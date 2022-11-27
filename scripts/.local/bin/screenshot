@@ -1,0 +1,3 @@
+#!/bin/sh
+
+maim -s | xclip -selection c -t image/png
