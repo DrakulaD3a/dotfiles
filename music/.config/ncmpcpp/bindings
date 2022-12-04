@@ -259,17 +259,17 @@ def_key "8"
 def_key "9"
   show_visualizer
 
-#def_key "="
-#  show_clock
-#
-#def_key "@"
-#  show_server_info
-#
-#def_key "s"
-#  stop
-#
-#def_key "p"
-#  pause
+def_key "0"
+  show_clock
+
+def_key "@"
+  show_server_info
+
+def_key "s"
+  stop
+
+def_key "p"
+  pause
 #
 #def_key ">"
 #  next

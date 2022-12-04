@@ -11,4 +11,4 @@ alias \
 
 alias journal="nvim --clean ~/JOURNAL.md"
 
-alias hist="history 1 -1 | cut -c 8- | sort | uniq | dmenu -l 10 | tr -d '\n' | xclip -sel c"
+alias hist="cat ~/.cache/zsh/history | sort | uniq | fzf | tr -d '\n' | xclip -sel c"

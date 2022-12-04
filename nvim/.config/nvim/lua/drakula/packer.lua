@@ -29,4 +29,6 @@ return require("packer").startup(function(use)
   -- Colorscheme
   use "folke/tokyonight.nvim"
 
+  use "nvim-treesitter/nvim-treesitter"
+
 end)
