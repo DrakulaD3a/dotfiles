@@ -18,3 +18,6 @@ tnoremap("<F5>", "<C-\\><C-n><cmd>q<CR>")
 
 nnoremap("<leader>sv", "<cmd>vertical split<CR>")
 nnoremap("<leader>sh", "<cmd>vertical split<CR>")
+
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz")
