@@ -20,11 +20,12 @@ return require("packer").startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig"
-  use "williamboman/nvim-lsp-installer"
   use "simrat39/rust-tools.nvim"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
 
   -- ColorPicker
-  use { "uga-rosa/ccc.nvim", branch = "0.7.2" }
+  use "uga-rosa/ccc.nvim"
 
   -- Colorscheme
   use "folke/tokyonight.nvim"
