@@ -144,40 +144,40 @@
 ##  - set_volume
 ##  - filter_playlist_on_priorities
 ##
-#
-#def_key "mouse"
-#  mouse_event
-#
+
+def_key "mouse"
+  mouse_event
+
 def_key "k"
   scroll_up
 
 def_key "j"
   scroll_down
 
-#def_key "["
-#  scroll_up_album
-#
-#def_key "]"
-#  scroll_down_album
-#
-#def_key "{"
-#  scroll_up_artist
-#
-#def_key "}"
-#  scroll_down_artist
-#
+def_key "["
+  scroll_up_album
+
+def_key "]"
+  scroll_down_album
+
+def_key "{"
+  scroll_up_artist
+
+def_key "}"
+  scroll_down_artist
+
 def_key "g"
   page_up
 
 def_key "G"
   page_down
-#
-#def_key "home"
-#  move_home
-#
-#def_key "end"
-#  move_end
-#
+
+def_key "home"
+  move_home
+
+def_key "end"
+  move_end
+
 #def_key "space"
 #  press_space
 #
@@ -189,10 +189,10 @@ def_key "d"
 
 #def_key "delete"
 #  delete_stored_playlist
-#
+
 def_key "l"
   next_column
-#
+
 #def_key "right"
 #  slave_screen
 #
@@ -213,7 +213,7 @@ def_key "h"
 #
 def_key "-"
   volume_down
-#
+
 #def_key ":"
 #  execute_command
 #
@@ -244,9 +244,9 @@ def_key "4"
 def_key "5"
   show_media_library
 
-def_key "5"
-  toggle_media_library_columns_mode
-
+#def_key "5"
+#  toggle_media_library_columns_mode
+#
 def_key "6"
   show_playlist_editor
 
@@ -270,13 +270,13 @@ def_key "s"
 
 def_key "p"
   pause
-#
-#def_key ">"
-#  next
-#
-#def_key "<"
-#  previous
-#
+
+def_key ">"
+  next
+
+def_key "<"
+  previous
+
 #def_key "ctrl_h"
 #  jump_to_parent_directory
 #
