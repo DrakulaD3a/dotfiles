@@ -28,8 +28,18 @@ return require("packer").startup(function(use)
   use "uga-rosa/ccc.nvim"
 
   -- Colorscheme
-  use "folke/tokyonight.nvim"
+  use({
+	  'rose-pine/neovim',
+	  as = 'rose-pine',
+	  config = function()
+		  vim.cmd('colorscheme rose-pine')
+	  end
+  })
 
-  use "nvim-treesitter/nvim-treesitter"
+  -- Treesitter
+  use ("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
+
+  -- Undotree
+  use "mbbill/undotree"
 
 end)
