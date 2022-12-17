@@ -1,6 +1,6 @@
+vim.g.mapleader = " "
+
 require "drakula.set"
 require "drakula.remap"
-require "drakula.colorscheme"
-require "drakula.cmp"
 require "drakula.lsp"
-require "drakula.treesitter"
+require "drakula.cmp"
