@@ -1,6 +1,7 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-export PATH="/home/drakula/.local/bin:/home/drakula/.local/bin/statusbar:$PATH"
+export PATH="/home/drakula/.local/bin:$PATH"
+export PATH="/home/drakula/.local/bin/statusbar:$PATH"
 
 # TMUX Aliases
 alias \
@@ -11,12 +12,3 @@ alias \
 alias journal="nvim --clean ~/JOURNAL.md"
 
 alias hist="cat ~/.cache/zsh/history | sort | uniq | fzf | tr -d '\n' | xclip -sel c"
-
-alias g="git"
-alias c="cargo"
-
-alias dotf="cd ~/dotfiles"
-
-# temporary aliases for my projects
-alias voxel="cd ~/personal/coding/Rust/voxel-engine"
-alias tour="cd ~/personal/coding/WebDev/tour_de_app"
