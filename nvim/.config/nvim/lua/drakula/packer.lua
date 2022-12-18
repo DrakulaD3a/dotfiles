@@ -20,7 +20,6 @@ return require("packer").startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig"
-  use "simrat39/rust-tools.nvim"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
 
@@ -35,6 +34,12 @@ return require("packer").startup(function(use)
 		  vim.cmd('colorscheme rose-pine')
 	  end
   })
+
+  use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  -- or                            , branch = '0.1.x',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
   -- Treesitter
   use ("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})

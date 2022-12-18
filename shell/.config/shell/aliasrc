@@ -16,6 +16,8 @@ alias g="git"
 alias c="cargo"
 
 alias dotf="cd ~/dotfiles"
+alias dwm="cd ~/personal/suckless/dwm"
+alias blocks="cd ~/personal/suckless/dwmblocks"
 
 # temporary aliases for my projects
 alias voxel="cd ~/personal/coding/Rust/voxel-engine"
