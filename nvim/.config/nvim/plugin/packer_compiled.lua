@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/lukas/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/lukas/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/lukas/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",

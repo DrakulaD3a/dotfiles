@@ -1,6 +1,8 @@
 local o = vim.opt
 local g = vim.g
 
+o.shell = "/usr/bin/zsh"
+
 o.wildmenu = true
 
 o.encoding = "utf-8"

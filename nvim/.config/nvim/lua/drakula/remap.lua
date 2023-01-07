@@ -1,19 +1,16 @@
-local remap = require 'drakula.keymap'
-local nnoremap = remap.nnoremap
-local tnoremap = remap.tnoremap
+local remap = vim.keymap.set
 
 
-vim.keymap.set("n", "<leader>e", "<cmd>Ex<CR>")
-nnoremap("<leader>e", "<cmd>Ex<CR>")
+remap("n", "<leader>e", "<cmd>Ex<CR>")
 
-nnoremap("<leader>cp", "<cmd>CccPick<CR>")
+remap("n", "<leader>cp", "<cmd>CccPick<CR>")
 
-nnoremap("<F5>", "<cmd>split term://bash<CR><C-w>J7<C-w>-i")
+remap("n", "<F5>", "<cmd>split<CR><cmd>term<CR><C-w>J7<C-w>-i")
 
-tnoremap("<F5>", "<C-\\><C-n><cmd>q<CR>")
+remap("t", "<F5>", "<C-\\><C-n>:q<CR>")
 
-nnoremap("<leader>sv", "<cmd>vertical split<CR>")
-nnoremap("<leader>sh", "<cmd>vertical split<CR>")
+remap("n", "<leader>sv", "<cmd>vertical split<CR>")
+remap("n", "<leader>sh", "<cmd>vertical split<CR>")
 
-nnoremap("<C-u>", "<C-u>zz")
-nnoremap("<C-d>", "<C-d>zz")
+remap("n", "<C-u>", "<C-u>zz")
+remap("n", "<C-d>", "<C-d>zz")
