@@ -22,9 +22,7 @@ if not lspconfig_status_ok then
 	return
 end
 
-local M = {}
-
-M.setup = function()
+local function setup()
 	vim.diagnostic.config({
 		-- disable virtual text
 		virtual_text = false,
@@ -82,27 +80,22 @@ local function lsp_keymaps(bufnr)
 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
-M.on_attach = function(client, bufnr)
-	lsp_keymaps(bufnr)
-	lsp_highlight_document(client)
-end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
 	return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+setup()
 
-M.setup()
-
-for _, server in pairs(servers) do
-	server = vim.split(server, "@")[1]
+-- Setups all installed servers
+for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 	lspconfig[server].setup({
-		on_attach = M.on_attach,
-		capabilities = M.capabilities,
+		on_attach = function(client, bufnr)
+			lsp_keymaps(bufnr)
+			lsp_highlight_document(client)
+		end,
+		capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
 	})
 end
