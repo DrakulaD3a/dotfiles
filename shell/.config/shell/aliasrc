@@ -1,6 +1,10 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 export PATH="/home/drakula/.local/bin:/home/drakula/.local/bin/statusbar:$PATH"
+export XDG_DOWNLOAD_DIR="$HOME/personal/downloads/"
+export XDG_DESKTOP_DIR=""
+
+alias emacs="emacsclient -c -a 'emacs'"
 
 # TMUX Aliases
 alias \
@@ -15,13 +19,12 @@ alias hist="cat ~/.cache/zsh/history | sort | uniq | fzf | tr -d '\n' | xclip -s
 alias g="git"
 alias c="cargo"
 alias acli="arduino-cli"
-alias "acliu"="acli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno"
 
 alias dotf="cd ~/dotfiles"
 alias dwm="cd ~/personal/suckless/dwm"
 alias blocks="cd ~/personal/suckless/dwmblocks"
 
 # temporary aliases for my projects
-alias voxel="cd ~/personal/coding/Rust/voxel-engine"
-alias tour="cd ~/personal/coding/WebDev/tour_de_app"
-alias rogue="cd ~/personal/coding/Rust/roguelike"
+alias voxel="cd ~/personal/coding/rust/voxel-engine"
+alias tour="cd ~/personal/coding/webdev/tour_de_app"
+alias rogue="cd ~/personal/coding/rust/roguelike"
