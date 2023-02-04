@@ -1,19 +1,6 @@
-local servers = {
-	"sumneko_lua",
-	"clangd",
-	"html",
-	"eslint",
-	"tsserver",
-	"rust_analyzer",
-	"cssls",
-	"cmake",
-	"wgsl_analyzer",
-	"phpactor",
-}
-
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = servers,
+	ensure_installed = {},
 	automatic_installation = true,
 })
 
