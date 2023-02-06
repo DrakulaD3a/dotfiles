@@ -1,10 +1,6 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-export PATH="/home/drakula/.local/bin:/home/drakula/.local/bin/statusbar:$PATH"
-export XDG_DOWNLOAD_DIR="$HOME/personal/downloads/"
-export XDG_DESKTOP_DIR=""
-
-alias emacs="emacsclient -c -a 'emacs'"
+export PATH="/home/lukas/.local/bin:/home/drakula/.local/bin/statusbar:$PATH"
 
 # TMUX Aliases
 alias \
@@ -14,7 +10,7 @@ alias \
 
 alias journal="nvim --clean ~/JOURNAL.md"
 
-alias hist="cat ~/.cache/zsh/history | sort | uniq | fzf | tr -d '\n' | xclip -sel c"
+alias hist="cat ~/.cache/zsh/history | sort | uniq | fzf | tr -d '\n' | wl-copy"
 
 alias g="git"
 alias c="cargo"
