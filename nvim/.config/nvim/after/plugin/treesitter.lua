@@ -1,15 +1,18 @@
 require'nvim-treesitter.configs'.setup {
-  sync_install = false,
+	sync_install = false,
 
-  auto_install = true,
+	-- When opening file, I dont have treesitter downloaded for, automatically download
+	auto_install = true,
 
-  highlight = {
-    enable = true,
+	-- Enable syntax highlighting using treesitter
+	highlight = {
+		enable = true,
 
-    additional_vim_regex_highlighting = false,
-  },
+		additional_vim_regex_highlighting = false,
+	},
 
-  indent = {
-	  enable = true;
-  },
+	-- Enable indenting using treesitter
+	indent = {
+		enable = true;
+	},
 }
