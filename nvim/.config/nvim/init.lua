@@ -24,8 +24,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lua",
 	"hrsh7th/cmp-nvim-lsp",
 	"saadparwaiz1/cmp_luasnip",
-	-- LaTeX symbols
-	"kdheepak/cmp-latex-symbols",
+	"kdheepak/cmp-latex-symbols", -- LaTeX symbols
 
 	-- Snippets
 	"L3MON4D3/LuaSnip",
