@@ -48,7 +48,6 @@ local function lsp_keymaps(bufnr)
 	vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, opts)
 	vim.keymap.set("n", "g]", vim.diagnostic.goto_next, opts)
 	vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
-	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
