@@ -1,7 +1,5 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-export PATH="/home/lukas/.local/bin:/home/drakula/.local/bin/statusbar:$PATH"
-
 # TMUX Aliases
 alias \
   tn="tmux new" \
