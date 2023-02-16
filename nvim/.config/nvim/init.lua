@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.localleader = "\\"
 
 require "lukas.set"
 require "lukas.remap"

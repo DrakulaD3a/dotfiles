@@ -35,7 +35,7 @@ o.updatetime = 50
 
 o.mouse = "a"
 
-o.laststatus = 0
+o.laststatus = 3
 -- o.cmdheight = 0
 
 o.fillchars = { eob = " " }

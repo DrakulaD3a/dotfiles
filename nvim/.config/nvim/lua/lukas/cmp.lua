@@ -66,7 +66,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "luasnip" },
 		{ name = "buffer", keyword_lenght = 5 },
-		{ name = "latex_symbols" }
+		{ name = "latex_symbols" },
 	},
 
 	snippet = {

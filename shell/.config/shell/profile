@@ -1,3 +1,5 @@
+export PERSONAL="$HOME/personal/"
+
 export PATH=$PATH:$HOME/.local/bin
 
 . "$HOME/.cargo/env"
@@ -23,5 +25,6 @@ export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  xbacklight -set 50
   exec Hyprland
 fi
