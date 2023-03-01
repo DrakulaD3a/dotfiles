@@ -1,4 +1,4 @@
 #!/bin/sh
 
-maim -s > /tmp/screenshot.png
-sxiv -b -s f /tmp/screenshot.png
+grim -g "$(slurp)" /tmp/screenshot.png
+imv -s full /tmp/screenshot.png

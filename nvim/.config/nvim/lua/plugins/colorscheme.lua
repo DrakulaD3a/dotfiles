@@ -5,7 +5,7 @@ return {
 		config = function()
 			vim.cmd.colorscheme('rose-pine')
 
-			local groups = {
+			--[[ local groups = {
 				"Normal",
 				"NormalNC",
 				"Comment",
@@ -32,7 +32,7 @@ return {
 
 			for _, group in pairs(groups) do
 				vim.api.nvim_set_hl(0, group, { bg = "none" })
-			end
+			end ]]
 
 		end
 	},

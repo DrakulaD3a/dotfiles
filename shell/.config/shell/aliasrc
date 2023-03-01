@@ -19,6 +19,9 @@ alias dwm="cd ~/personal/suckless/dwm"
 alias blocks="cd ~/personal/suckless/dwmblocks"
 
 # temporary aliases for my projects
-alias voxel="cd ~/personal/coding/rust/voxel-engine"
-alias tour="cd ~/personal/coding/webdev/tour_de_app"
-alias rogue="cd ~/personal/coding/rust/roguelike"
+alias voxel="cd ~/personal/coding/rust/voxel-engine && vim ."
+alias tour="cd ~/personal/coding/webdev/tour_de_app && vim ."
+alias rogue="cd ~/personal/coding/rust/roguelike && vim ."
+alias strategy="cd ~/personal/coding/rust/strategy && vim ."
+alias wfc="cd ~/personal/coding/rust/wfc && vim ."
+alias vd="cd ~/personal/coding/rust/voronoi_diagrams && vim ."

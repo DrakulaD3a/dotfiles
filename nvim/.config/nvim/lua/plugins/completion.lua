@@ -2,7 +2,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		init = function()
-			require("lukas.cmp");
+			require("lukas.cmp")
 		end,
 	},
 	"hrsh7th/cmp-buffer",
@@ -15,6 +15,9 @@ return {
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 		},
+		init = function ()
+			require("lukas.luasnip")
+		end
 	},
 	"rafamadriz/friendly-snippets",
 }

@@ -33,12 +33,14 @@ o.undofile = true
 
 o.updatetime = 50
 
-o.mouse = "a"
+o.mouse = "i"
 
 o.laststatus = 3
 -- o.cmdheight = 0
 
 o.fillchars = { eob = " " }
+
+o.signcolumn = "yes"
 
 -- netrw
 g.netrw_banner = 0

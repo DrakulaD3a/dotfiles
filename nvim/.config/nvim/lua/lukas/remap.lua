@@ -33,3 +33,5 @@ end
 -- Terminal spawn and despawn
 remap("n", "<leader>t", toggle_term)
 remap("t", "<leader>t", toggle_term)
+
+remap("n", "<leader>z", "<cmd>Neorg workspace zettelkasten<CR>")

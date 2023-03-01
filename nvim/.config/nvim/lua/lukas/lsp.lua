@@ -9,11 +9,17 @@ if not lspconfig_status_ok then
 	return
 end
 
+local signs = { Error = "-", Warn = "|", Hint = "~", Info = "i" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 local function setup()
 	vim.diagnostic.config({
 		-- disable virtual text
 		virtual_text = false,
-		signs = false,
+		signs = true,
 		update_in_insert = true,
 		underline = true,
 		severity_sort = true,

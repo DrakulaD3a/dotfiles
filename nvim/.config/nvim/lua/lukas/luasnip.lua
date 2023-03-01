@@ -1,0 +1,17 @@
+local ls = require("luasnip")
+
+ls.config.set_config {
+	history = false,
+}
+
+vim.keymap.set({ "i", "s" }, "<C-k>", function ()
+	if ls.jumpable() then
+		ls.jump()
+	end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-j>", function ()
+	if ls.jumpable(-1) then
+		ls.jump(-1)
+	end
+end, { silent = true })
