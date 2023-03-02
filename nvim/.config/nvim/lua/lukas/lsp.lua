@@ -4,6 +4,8 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
+require("neodev").setup();
+
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
 	return
@@ -73,6 +75,16 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
 			lsp_highlight_document(client)
 		end,
 		capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
+	})
+
+	lspconfig.lua_ls.setup({
+		settings = {
+			Lua = {
+				completion = {
+					callSnippet = "Replace"
+				}
+			}
+		}
 	})
 end
 
