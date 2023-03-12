@@ -12,18 +12,15 @@
     "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
+		"active-only": false,
         "format": "{icon}",
         "format-icons": {
-            "1": "α",
-            "2": "β",
-            "3": "γ",
-            "4": "δ",
-            "5": "ϵ",
-            "6": "ζ",
-            "7": "η",
-            "8": "θ",
-            "9": "ι",
-            "10": "κ",
+			"1": "",
+			"2": "󰈹",
+			"3": "",
+			"4": "",
+			"5": "",
+			"9": "󰂫",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -142,8 +139,8 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{volume}% 󰗾  {format_source}",
+        "format-bluetooth-muted": "󰗿  {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",

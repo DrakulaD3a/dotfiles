@@ -42,6 +42,11 @@ o.fillchars = { eob = " " }
 
 o.signcolumn = "yes"
 
+--[[ vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*.norg",
+	command = "set conceallevel=3",
+}) ]]
+
 -- netrw
 g.netrw_banner = 0
 g.netrw_liststyle = 3

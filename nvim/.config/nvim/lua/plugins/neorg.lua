@@ -2,6 +2,7 @@ return {
     {
         "nvim-neorg/neorg",
         build = ":Neorg sync-parsers",
+		event = "VeryLazy",
         opts = {
             load = {
                 ["core.defaults"] = {}, -- Loads default behaviour
@@ -22,6 +23,8 @@ return {
 						default_workspace = "coding",
                     },
                 },
+				["core.integrations.treesitter"] = {},
+				["core.export"] = {},
             },
         },
         dependencies = { "nvim-lua/plenary.nvim" },
