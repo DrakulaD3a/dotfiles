@@ -18,15 +18,23 @@ return {
 					-- Mappings like gco, gcO, gcA
 					extra = true,
 				},
-
-				-- Can be a function called before commenting
-				pre_hook = nil,
-
-				-- Can be a function called after commenting
-				post_hook = nil,
-
-				-- Can be used to ignore certain lines
-				ignore = nil,
+			}
+		end,
+	},
+	{
+		"folke/todo-comments.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function ()
+			local todo_comments = require("todo-comments");
+			todo_comments.setup {
+				signs = false,
+				keywords = {
+					FIXME = {
+						color = "warning",
+					},
+				},
 			}
 		end,
 	},

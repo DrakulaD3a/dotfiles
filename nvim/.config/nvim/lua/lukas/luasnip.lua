@@ -1,7 +1,8 @@
 local ls = require("luasnip")
+require("luasnip.loaders.from_vscode").lazy_load()
 
 ls.config.set_config {
-	history = false,
+	history = true,
 }
 
 vim.keymap.set({ "i", "s" }, "<C-k>", function ()
