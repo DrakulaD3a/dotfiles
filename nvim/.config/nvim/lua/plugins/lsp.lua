@@ -1,13 +1,13 @@
 return {
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("lukas.lsp");
-		end,
-	},
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"folke/neodev.nvim",
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("lukas.lsp");
+        end,
+    },
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "folke/neodev.nvim",
     {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
