@@ -1,0 +1,87 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 24, // Waybar height (to be removed for auto height)
+
+  "spacing": 4, // Gaps between modules (4px)
+
+  // "modules-left": ["cpu", "memory", "pulseaudio", "backlight"],
+  // "modules-center": ["wlr/workspaces"],
+  // "modules-right": ["mpd", "network", "battery", "clock"],
+  "modules-left": ["wlr/workspaces",],
+  "modules-center": [],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock"],
+
+  // Modules configuration
+  "wlr/workspaces": {
+    "on-click": "activate",
+    "sort-by-number": true,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "states": { "warning": 90 },
+  },
+
+  "memory": {
+    "states": { "warning": 90 },
+    "format": " {}%"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume} {format_source}",
+    "format-muted": " {format_source}",
+    "format-bluetooth": " {volume}",
+    "format-bluetooth-muted": " {volume}",
+    "format-source": " {volume}",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+  "mpd": {
+    "format": "{stateIcon}",
+    "state-icons": {
+      "paused": "",
+      "stopped": "",
+    },
+    "on-click": "mpc toggle",
+    "on-click-right": "mpc next",
+    "on-click-left": "mpc prev",
+  },
+
+  "network": {
+    "format": " {essid}",
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "clock": {
+    "timezone": "Europe/Prague",
+    "format": " {:%H:%M}",
+    "format-alt": " {:%d.%m.%Y}"
+  },
+}
+
