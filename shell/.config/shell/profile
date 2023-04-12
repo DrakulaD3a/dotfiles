@@ -15,14 +15,7 @@ export HYPRLAND_LOG_WLR=1
 export XCURSOR_THEME=Adwaita
 
 # Set a cursor size
-export XCURSOR_SIZE=24
-
-# Example IME Support: fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export SDL_IM_MODULE=fcitx
-export GLFW_IM_MODULE=ibus
+export XCURSOR_SIZE=18
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   xbacklight -set 50

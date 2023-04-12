@@ -16,7 +16,12 @@ return {
             null_ls.setup({
                 sources = {
                     null_ls.builtins.diagnostics.eslint_d,
-                    null_ls.builtins.formatting.prettier,
+                    null_ls.builtins.formatting.prettier.with({
+                        filetypes = {
+                            "javascript", "typescript", "javascriptreact", "typescriptreact",
+                        }
+                    }),
+                    null_ls.builtins.formatting.astyle,
                 }
             })
         end,

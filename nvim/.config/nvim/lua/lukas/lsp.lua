@@ -77,6 +77,7 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
         on_attach = function(client, bufnr)
             lsp_keymaps(bufnr)
             lsp_highlight_document(client)
+            client.server_capabilities.documentFormattingProvider = false
         end,
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
     })
@@ -92,6 +93,7 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
         on_attach = function(client, bufnr)
             lsp_keymaps(bufnr)
             lsp_highlight_document(client)
+            client.server_capabilities.documentFormattingProvider = false
         end,
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
     })

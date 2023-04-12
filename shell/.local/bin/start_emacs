@@ -1,0 +1,5 @@
+#!/bin/sh
+
+emacs &
+
+hyprctl dispatch movetoworkspace special
