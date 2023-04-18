@@ -23,7 +23,7 @@ return {
 	},
 	{
 		"folke/todo-comments.nvim",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
 		config = function ()

@@ -51,7 +51,7 @@ local function lsp_keymaps(bufnr)
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<leader>rr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, opts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, opts)
@@ -96,5 +96,17 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
             client.server_capabilities.documentFormattingProvider = false
         end,
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
+    })
+
+    local clang_capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+    clang_capabilities.offsetEncoding = { "utf-16" }
+
+    lspconfig["clangd"].setup({
+        on_attach = function(client, bufnr)
+            lsp_keymaps(bufnr)
+            lsp_highlight_document(client)
+            client.server_capabilities.documentFormattingProvider = false
+        end,
+        capabilities = clang_capabilities,
     })
 end

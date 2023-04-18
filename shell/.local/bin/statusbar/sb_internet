@@ -1,3 +1,0 @@
-#!/bin/sh
-
-awk '/^\s*w/ { print "直", int($3 * 100 / 70) "% "}' /proc/net/wireless
