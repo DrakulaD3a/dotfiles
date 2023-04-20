@@ -1,6 +1,8 @@
 local o = vim.opt
 local g = vim.g
 
+vim.cmd.colorscheme("tokyonight")
+
 o.shell = "/usr/bin/zsh"
 
 o.wildmenu = true
@@ -56,34 +58,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
 g.netrw_banner = 0
 g.netrw_liststyle = 3
 g.netrw_list_hide = ".git"
-
-function Transparent()
-	local groups = {
-		"Normal",
-		"NormalNC",
-		"Comment",
-		"Constant",
-		"Special",
-		"Identifier",
-		"Statement",
-		"PreProc",
-		"Type",
-		"Underlined",
-		"Todo",
-		"String",
-		"Function",
-		"Conditional",
-		"Repeat",
-		"Operator",
-		"Structure",
-		"LineNr",
-		"NonText",
-		"SignColumn",
-		"CursorLineNr",
-		"EndOfBuffer",
-	}
-
-	for _, group in pairs(groups) do
-		vim.api.nvim_set_hl(0, group, { bg = "none" })
-	end
-end

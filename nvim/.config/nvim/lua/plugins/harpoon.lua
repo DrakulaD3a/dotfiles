@@ -8,9 +8,10 @@ return {
 
             vim.keymap.set("n", "<leader>hm", harpoon_mark.add_file, { noremap = true, silent = true });
             vim.keymap.set("n", "<leader>ht", harpoon_ui.toggle_quick_menu, { noremap = true, silent = true });
-            for i = 1, 4, 1 do
-                vim.keymap.set("n", "<leader>h" .. i, function () harpoon_ui.nav_file(i) end, { noremap = true, silent = true });
-            end
+            vim.keymap.set("n", "<C-j>", function () harpoon_ui.nav_file(1) end, { noremap = true, silent = true });
+            vim.keymap.set("n", "<C-k>", function () harpoon_ui.nav_file(2) end, { noremap = true, silent = true });
+            vim.keymap.set("n", "<C-l>", function () harpoon_ui.nav_file(3) end, { noremap = true, silent = true });
+            vim.keymap.set("n", "<C-;>", function () harpoon_ui.nav_file(4) end, { noremap = true, silent = true });
         end,
     }
 }

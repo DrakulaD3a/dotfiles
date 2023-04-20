@@ -4,6 +4,7 @@
 
 (savehist-mode -1)
 (setq make-backup-files nil)
+(setq which-key-preserve-window-configuration t)
 
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -118,6 +119,7 @@
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   (setq evil-want-C-u-scroll t)
+  (setq evil-undo-system 'undo-redo)
   (evil-mode 1)
   :hook (evil-mode . mymacs/evil-hook)
   :config
@@ -187,6 +189,17 @@
 
 (require 'org-indent)
 
+(use-package tree-sitter-langs)
+(use-package tree-sitter
+  :config
+  (require 'tree-sitter)
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+(use-package rust-mode)
+(use-package toml-mode)
+
 (use-package org-roam
   :ensure t
   :custom
@@ -205,16 +218,6 @@
   (setq org-roam-ui-sync-theme t
 	org-roam-ui-follow t
 	org-roam-ui-update-on-save t))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(org-roam-ui org-roam org-bullets counsel-projectile projectile hydra evil-collection evil general counsel ivy-rich which-key all-the-icons doom-themes doom-modeline ivy command-log-mode use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+(plist-put org-format-latex-options :scale 2.0)
+(setq org-startup-with-latex-preview t)
