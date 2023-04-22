@@ -34,4 +34,5 @@ end
 remap("n", "<leader>t", toggle_term)
 remap("t", "<leader>t", toggle_term)
 
-remap("n", "<leader>z", "<cmd>Neorg workspace zettelkasten<CR>")
+remap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+remap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

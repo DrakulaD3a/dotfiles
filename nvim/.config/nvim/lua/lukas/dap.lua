@@ -1,6 +1,8 @@
 local dap = require("dap");
 local ui = require("dapui");
 
+ui.setup()
+
 vim.keymap.set("n", "<F5>", dap.continue, { desc = "start debugging" })
 vim.keymap.set("n", "<F10>", dap.step_over, { desc = "step over" })
 vim.keymap.set("n", "<F11>", dap.step_into, { desc = "step into" })
@@ -11,23 +13,23 @@ vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "open repl" })
 vim.keymap.set("n", "<leader>du", ui.toggle, { desc = "toggle dap ui" })
 
 dap.adapters.lldb = {
-	type = "executable";
-	command = os.getenv('HOME') .. '/.local/share/nvim/mason/bin/codelldb';
-	name = "lldb";
+    type = "executable";
+    command = "/usr/bin/lldb-vscode";
+    name = "lldb";
 }
 
 dap.configurations.rust = {
-	{
-		name = "Launch",
-		type = "lldb",
-		request = "launch",
-		program = function()
-			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-		end,
-		cwd = "${workspaceFolder}",
-		stopOnEntry = false,
-		args = {},
+    {
+        name = "Launch",
+        type = "lldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
 
-		runInTerminal = false,
-	}
+        runInTerminal = false,
+    }
 }

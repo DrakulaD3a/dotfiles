@@ -21,3 +21,5 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   xbacklight -set 50
   exec Hyprland
 fi
+
+bindkey -s ^f "tmux-sessionizer\n"

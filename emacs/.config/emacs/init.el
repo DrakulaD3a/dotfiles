@@ -152,8 +152,8 @@
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
-  (when (file-directory-p "~/personal/coding/*/")
-    (setq projectile-project-search-path '("~/personal/coding/*/")))
+  (when (file-directory-p "~/personal/projects/")
+    (setq projectile-project-search-path '("~/personal/projects/")))
   (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile

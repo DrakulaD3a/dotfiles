@@ -6,24 +6,8 @@ alias \
   ta="tmux attach" \
   td="tmux detach"
 
-alias journal="nvim --clean ~/JOURNAL.md"
-
 alias hist="cat ~/.cache/zsh/history | sort | uniq | fzf | tr -d '\n' | wl-copy"
 
 alias g="git"
 alias c="cargo"
 alias acli="arduino-cli"
-
-alias dotf="cd ~/dotfiles"
-alias dwm="cd ~/personal/suckless/dwm"
-alias blocks="cd ~/personal/suckless/dwmblocks"
-
-# temporary aliases for my projects
-alias voxel="cd ~/personal/coding/rust/voxel-engine && vim ."
-alias tour="cd ~/personal/coding/webdev/tour_de_app && vim ."
-alias rogue="cd ~/personal/coding/rust/roguelike && vim ."
-alias strategy="cd ~/personal/coding/rust/strategy && vim ."
-alias wfc="cd ~/personal/coding/rust/wfc && vim ."
-alias vd="cd ~/personal/coding/rust/voronoi_diagrams && vim ."
-alias bazos="cd ~/personal/school/AS/bazos && vim ."
-alias t3="cd ~/personal/coding/webdev/starting-with-t3 && vim ."
