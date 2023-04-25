@@ -1,16 +1,15 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 24, // Waybar height (to be removed for auto height)
 
   "spacing": 4, // Gaps between modules (4px)
 
   // "modules-left": ["cpu", "memory", "pulseaudio", "backlight"],
   // "modules-center": ["wlr/workspaces"],
   // "modules-right": ["mpd", "network", "battery", "clock"],
-  "modules-left": ["wlr/workspaces",],
+  "modules-left": ["wlr/workspaces"],
   "modules-center": ["hyprland/submap"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "backlight", "battery", "hyprland/language", "clock"],
+  "modules-right": ["hyprland/language", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock"],
 
   // Modules configuration
   "wlr/workspaces": {
@@ -33,19 +32,19 @@
   "hyprland/language": {
     "format": " {}",
     "format-en": "en",
-    "format-cs": "cz",
+    "format-cs": "cz"
   },
 
   "cpu": {
     "format": " {usage}%",
     "states": { "warning": 90 },
-    "tooltip": false,
+    "tooltip": false
   },
 
   "memory": {
     "states": { "warning": 90 },
     "format": " {}%",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "pulseaudio": {
@@ -58,7 +57,7 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-    "tooltip": false,
+    "tooltip": false
   },
 
   "backlight": {
@@ -70,37 +69,37 @@
     "format": "{stateIcon}",
     "state-icons": {
       "paused": "",
-      "stopped": "",
+      "stopped": ""
     },
     "on-click": "mpc toggle",
     "on-click-right": "mpc next",
     "on-click-left": "mpc prev",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "network": {
     "format": " {essid}",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "battery": {
     "states": {
       "good": 95,
-      "warning": 30,
-      "critical": 15
+      "warning": 20,
+      "critical": 10
     },
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-icons": ["", "", "", "", ""],
-    "tooltip": false,
+    "tooltip": false
   },
 
   "clock": {
     "timezone": "Europe/Prague",
     "format": " {:%H:%M}",
     "format-alt": " {:%d.%m.%Y}",
-    "tooltip": false,
-  },
+    "tooltip": false
+  }
 }
 

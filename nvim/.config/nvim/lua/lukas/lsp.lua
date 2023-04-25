@@ -87,8 +87,11 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
             Lua = {
                 completion = {
                     callSnippet = "Replace"
-                }
-            }
+                },
+                workspace = {
+                    checkThirdParty = false,
+                },
+            },
         },
         on_attach = function(client, bufnr)
             lsp_keymaps(bufnr)
