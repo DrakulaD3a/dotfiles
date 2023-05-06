@@ -6,7 +6,7 @@ return {
     opts = {
         notify = false,
         keymaps = {
-            toggle_macro_menu = "<leader>q",
+            toggle_macro_menu = "<C-q>",
         },
     },
 }
