@@ -39,6 +39,11 @@ cmp.setup({
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 	},
 
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+
 	sources = {
 		{ name = "nvim_lua" },
 		{ name = "nvim_lsp" },
