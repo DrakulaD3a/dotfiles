@@ -36,8 +36,6 @@ o.undofile = true
 
 o.updatetime = 50
 
-o.mouse = "i"
-
 o.laststatus = 3
 -- o.cmdheight = 0
 
@@ -51,6 +49,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		o.formatoptions:remove("c")
 		o.formatoptions:remove("r")
 		o.formatoptions:remove("o")
+        vim.cmd("TSBufEnable highlight")
 	end,
 })
 

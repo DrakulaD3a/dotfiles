@@ -174,7 +174,7 @@
   :after org
   :hook (org-mode . org-bullets-mode)
   :custom
-  (org-bullets-bullet-list '("" "" "" "" "" "" "")))
+  (org-bullets-bullet-list '("" "" "" "" "" "" "")))
 
 (defun mymacs/org-font-setup ()
   (dolist (face '((org-level-1 . 1.2)
