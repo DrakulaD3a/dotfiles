@@ -1,6 +1,6 @@
 return {
-	{
-		"folke/zen-mode.nvim",
-		config = true,
-	}
+    {
+        "folke/zen-mode.nvim",
+        config = true,
+    }
 }

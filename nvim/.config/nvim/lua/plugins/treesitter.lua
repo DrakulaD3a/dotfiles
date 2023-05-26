@@ -5,6 +5,8 @@ return {
     },
     build = ":TSUpdate",
     opts = {
+        ensure_installed = { "rust", "c", "lua", "markdown", "markdown_inline", "vimdoc" },
+
         sync_install = false,
 
         -- When opening file, I dont have treesitter downloaded for, automatically download

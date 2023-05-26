@@ -1,7 +1,6 @@
 local o = vim.opt
-local g = vim.g
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("tokyonight")
 
 o.shell = "/usr/bin/zsh"
 
@@ -44,16 +43,11 @@ o.fillchars = { eob = " " }
 o.signcolumn = "yes"
 
 vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*",
-	callback = function()
-		o.formatoptions:remove("c")
-		o.formatoptions:remove("r")
-		o.formatoptions:remove("o")
+    pattern = "*",
+    callback = function()
+        o.formatoptions:remove("c")
+        o.formatoptions:remove("r")
+        o.formatoptions:remove("o")
         vim.cmd("TSBufEnable highlight")
-	end,
+    end,
 })
-
--- netrw
-g.netrw_banner = 0
-g.netrw_liststyle = 3
-g.netrw_list_hide = ".git"

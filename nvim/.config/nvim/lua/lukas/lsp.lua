@@ -1,15 +1,11 @@
 require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = {},
-    automatic_installation = true,
+require("mason-lspconfig").setup({ ensure_installed = {},
+automatic_installation = true,
 })
 
 require("neodev").setup();
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-    return
-end
+local lspconfig = require "lspconfig"
 
 local signs = { Error = "-", Warn = "|", Hint = "~", Info = "i" }
 for type, icon in pairs(signs) do
@@ -48,7 +44,7 @@ end
 local function lsp_keymaps(bufnr)
     local opts = { buffer = bufnr, noremap = true, silent = true }
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, opts)
@@ -62,10 +58,7 @@ local function lsp_keymaps(bufnr)
     end, opts)
 end
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-    return
-end
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
 setup()
 
@@ -77,7 +70,6 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
         on_attach = function(client, bufnr)
             lsp_keymaps(bufnr)
             lsp_highlight_document(client)
-            client.server_capabilities.documentFormattingProvider = false
         end,
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
     })
