@@ -35,8 +35,11 @@ o.undofile = true
 
 o.updatetime = 50
 
-o.laststatus = 3
+-- Disable statusline
+-- o.laststatus = 0
 -- o.cmdheight = 0
+
+o.laststatus = 3
 
 o.fillchars = { eob = " " }
 

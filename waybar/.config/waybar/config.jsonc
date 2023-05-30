@@ -1,12 +1,5 @@
 {
-  "layer": "top", // Waybar at top layer
-  "position": "top", // Waybar position (top|bottom|left|right)
-
-  "spacing": 4, // Gaps between modules (4px)
-
-  // "modules-left": ["cpu", "memory", "pulseaudio", "backlight"],
-  // "modules-center": ["wlr/workspaces"],
-  // "modules-right": ["mpd", "network", "battery", "clock"],
+  "spacing": 4,
   "modules-left": ["wlr/workspaces"],
   "modules-center": ["hyprland/submap"],
   "modules-right": ["hyprland/language", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock"],
@@ -35,6 +28,24 @@
     "format-cs": "cz"
   },
 
+  "pulseaudio": {
+    "format": "{icon} {volume} {format_source}",
+    "format-muted": " {format_source}",
+    "format-bluetooth": " {volume}",
+    "format-bluetooth-muted": " {volume}",
+    "format-source": " {volume}",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": [" ", " ", " "]
+    },
+    "tooltip": false
+  },
+
+  "network": {
+    "format": "  {essid}",
+    "tooltip": false
+  },
+
   "cpu": {
     "format": " {usage}%",
     "states": { "warning": 90 },
@@ -47,39 +58,9 @@
     "tooltip": false
   },
 
-  "pulseaudio": {
-    "format": "{icon} {volume} {format_source}",
-    "format-muted": " {format_source}",
-    "format-bluetooth": " {volume}",
-    "format-bluetooth-muted": " {volume}",
-    "format-source": " {volume}",
-    "format-source-muted": "",
-    "format-icons": {
-      "default": ["", "", ""]
-    },
-    "tooltip": false
-  },
-
   "backlight": {
     "format": "{icon} {percent}",
     "format-icons": ["", "", "", "", "", "", "", "", ""]
-  },
-
-  "mpd": {
-    "format": "{stateIcon}",
-    "state-icons": {
-      "paused": "",
-      "stopped": ""
-    },
-    "on-click": "mpc toggle",
-    "on-click-right": "mpc next",
-    "on-click-left": "mpc prev",
-    "tooltip": false
-  },
-
-  "network": {
-    "format": "  {essid}",
-    "tooltip": false
   },
 
   "battery": {
@@ -102,4 +83,3 @@
     "tooltip": false
   }
 }
-
