@@ -11,4 +11,5 @@ return {
             require("lukas.dap")
         end
     },
+    "nvim-telescope/telescope-dap.nvim",
 }

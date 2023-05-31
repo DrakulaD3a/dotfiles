@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({ ensure_installed = {},
-automatic_installation = true,
+    automatic_installation = true,
 })
 
 require("neodev").setup();
@@ -15,6 +15,13 @@ end
 
 local function setup()
     vim.diagnostic.config({
+        float = {
+            border = "rounded",
+            source = "always",
+            header = "",
+            prefix = "",
+            style = "minimal",
+        },
         -- disable virtual text
         virtual_text = false,
         signs = true,

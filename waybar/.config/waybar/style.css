@@ -1,6 +1,6 @@
 * {
   font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: #7aa2f7;
 }
 
@@ -67,7 +67,7 @@ button:hover {
 #mpd,
 #window,
 #workspaces {
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
   background-color: #1a1b26;
   padding: 0 0.5rem;
   border-radius: 0.75rem
@@ -83,13 +83,13 @@ button:hover {
 }
 
 .modules-left > widget:first-child > #workspaces {
-  margin-left: 0.9rem;
+  margin-left: 8px;
 }
 
 .modules-right {
-  margin-right: 0.9rem;
+  margin-right: 8px;
 }
 
 .modules-right > widget:last-child > #workspaces {
-  margin-right: 0.9rem;
+  margin-right: 8px;
 }
