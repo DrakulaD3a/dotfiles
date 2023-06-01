@@ -51,7 +51,7 @@ end
 local function lsp_keymaps(bufnr)
     local opts = { buffer = bufnr, noremap = true, silent = true }
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "gd", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, opts)
@@ -59,7 +59,6 @@ local function lsp_keymaps(bufnr)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "g]", vim.diagnostic.goto_next, opts)
-    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
     vim.keymap.set("n", "<leader>fm", function()
         vim.lsp.buf.format { async = true }
     end, opts)
