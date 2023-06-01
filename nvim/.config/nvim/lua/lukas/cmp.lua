@@ -50,6 +50,7 @@ cmp.setup({
         { name = "path" },
         { name = "luasnip" },
         { name = "buffer", keyword_lenght = 5 },
+        { name = "crates" },
     },
 
     snippet = {
@@ -69,7 +70,7 @@ cmp.setup({
                 buffer   = "[File]",
                 luasnip  = "[Snip]",
                 path     = "[Path]",
-                latex_symbols = "[LaTeX]",
+                crates   = "[Crate]",
             })[entry.source.name]
 
             return vim_item
