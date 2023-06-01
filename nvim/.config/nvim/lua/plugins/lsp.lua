@@ -26,4 +26,28 @@ return {
             })
         end,
     },
+    {
+        "glepnir/lspsaga.nvim",
+        event = "LspAttach",
+        config = function()
+            require("lspsaga").setup({
+                lightbulb = {
+                    enable = false,
+                },
+                symbol_in_winbar = {
+                    enable = false,
+                },
+                ui = {
+                    title = false,
+                    border = "rounded",
+                },
+                beacon = {
+                    enable = false,
+                },
+                diagnostic = {
+                    show_code_action = false,
+                },
+            })
+        end,
+    },
 }

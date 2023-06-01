@@ -1,11 +1,9 @@
 require("mason").setup()
-require("mason-lspconfig").setup({ ensure_installed = {},
-    automatic_installation = true,
-})
-
+require("mason-lspconfig").setup()
 require("neodev").setup();
 
 local lspconfig = require "lspconfig"
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
 local signs = { Error = "-", Warn = "|", Hint = "~", Info = "i" }
 for type, icon in pairs(signs) do
@@ -48,33 +46,24 @@ local function lsp_highlight_document(client)
     end
 end
 
-local function lsp_keymaps(bufnr)
-    local opts = { buffer = bufnr, noremap = true, silent = true }
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
-    vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, opts)
-    vim.keymap.set("n", "g]", vim.diagnostic.goto_next, opts)
-    vim.keymap.set("n", "<leader>fm", function()
-        vim.lsp.buf.format { async = true }
-    end, opts)
-end
-
-local cmp_nvim_lsp = require "cmp_nvim_lsp"
+vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "g[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "g]", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fm", function()
+    vim.lsp.buf.format { async = true }
+end, { noremap = true, silent = true })
 
 setup()
 
--- Setups all installed servers
 for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     lspconfig[server].setup({
-        on_attach = function(client, bufnr)
-            lsp_keymaps(bufnr)
+        on_attach = function(client, _)
             lsp_highlight_document(client)
         end,
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
@@ -91,8 +80,7 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
                 },
             },
         },
-        on_attach = function(client, bufnr)
-            lsp_keymaps(bufnr)
+        on_attach = function(client, _)
             lsp_highlight_document(client)
             client.server_capabilities.documentFormattingProvider = false
         end,
@@ -103,8 +91,7 @@ for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
     clang_capabilities.offsetEncoding = { "utf-16" }
 
     lspconfig["clangd"].setup({
-        on_attach = function(client, bufnr)
-            lsp_keymaps(bufnr)
+        on_attach = function(client, _)
             lsp_highlight_document(client)
             client.server_capabilities.documentFormattingProvider = false
         end,
