@@ -5,7 +5,7 @@ require("neodev").setup();
 local lspconfig = require "lspconfig"
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
-local signs = { Error = "-", Warn = "|", Hint = "~", Info = "i" }
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -51,8 +51,10 @@ vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent 
 vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = true })
+
 vim.keymap.set("n", "g[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "g]", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true })
+
 vim.keymap.set("n", "<leader>fm", function()
     vim.lsp.buf.format { async = true }
 end, { noremap = true, silent = true })

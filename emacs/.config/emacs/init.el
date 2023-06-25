@@ -11,6 +11,7 @@
 (tooltip-mode -1)
 (set-fringe-mode -1)
 (blink-cursor-mode 0)
+(setq split-width-threshold 1)
 
 (menu-bar-mode -1)
 
@@ -152,8 +153,8 @@
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
-  (when (file-directory-p "~/personal/projects/")
-    (setq projectile-project-search-path '("~/personal/projects/")))
+  (when (file-directory-p "~/projects/")
+    (setq projectile-project-search-path '("~/projects/")))
   (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile
@@ -177,9 +178,9 @@
   (org-bullets-bullet-list '("" "" "" "" "" "" "")))
 
 (defun mymacs/org-font-setup ()
-  (dolist (face '((org-level-1 . 1.2)
-		  (org-level-2 . 1.1)
-		  (org-level-3 . 1.05)
+  (dolist (face '((org-level-1 . 1.1)
+		  (org-level-2 . 1.05)
+		  (org-level-3 . 1.0)
 		  (org-level-4 . 1.0)
 		  (org-level-5 . 1.0)
 		  (org-level-6 . 1.0)
@@ -203,7 +204,14 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/personal/org")
+  (org-roam-directory "~/personal/Zettelkasten")
+  (org-roam-completion-everywhere t)
+  (org-roam-capture-templates
+   '(("d" "default" plain
+      "* ${title}\n%?\n\n\n** Podobné\n\n** Opačné\n\n** Vychází z\n\n** Vede k\n\n"
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :draft:\n")
+      :unnarrowed t)))
+
   :bind (("C-c n l" . org-roam-buffer-toggle)
 	 ("C-c n f" . org-roam-node-find)
 	 ("C-c n i" . org-roam-node-insert)
@@ -211,6 +219,10 @@
 	 ("C-M-i" . completion-at-point))
   :config
   (org-roam-setup))
+
+(setq org-roam-node-display-template
+      (concat "${title:*} "
+	      (propertize "${tags:20}" 'face 'org-tag)))
 
 (use-package org-roam-ui
   :after org-roam
@@ -221,3 +233,4 @@
 
 (plist-put org-format-latex-options :scale 2.0)
 (setq org-startup-with-latex-preview t)
+(setq org-startup-with-inline-images t)

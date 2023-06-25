@@ -12,10 +12,10 @@ export BROWSER="firefox"
 export HYPRLAND_LOG_WLR=1
 
 # Tell XWayland to use a cursor theme
-export XCURSOR_THEME=Adwaita
+export XCURSOR_THEME=Bibata-Modern-Classic
 
 # Set a cursor size
-export XCURSOR_SIZE=18
+export XCURSOR_SIZE=22
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   xbacklight -set 50
