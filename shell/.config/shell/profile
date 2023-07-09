@@ -5,6 +5,7 @@ export PATH=$PATH:$HOME/.local/bin
 . "$HOME/.cargo/env"
 
 export EDITOR="nvim"
+export VISUAL="neovide"
 export TERMINAL="foot"
 export BROWSER="firefox"
 

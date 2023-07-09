@@ -1,4 +1,5 @@
 local o = vim.opt
+local g = vim.g
 
 vim.cmd.colorscheme("tokyonight")
 
@@ -54,3 +55,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
         vim.cmd("TSBufEnable highlight")
     end,
 })
+
+-- For neovide
+o.guifont = "Hack Nerd Font Mono:h16"
+g.neovide_transparency = 0.9
+g.neovide_hide_mouse_when_typing = true
