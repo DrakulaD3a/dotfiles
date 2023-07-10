@@ -12,3 +12,4 @@
 
 [core]
 	excludesfile = /home/lukas/.config/git/ignore
+    editor = nvim
