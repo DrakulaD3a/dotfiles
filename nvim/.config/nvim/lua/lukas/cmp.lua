@@ -49,7 +49,7 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "luasnip" },
-        { name = "buffer", keyword_lenght = 5 },
+        { name = "buffer",  keyword_lenght = 5 },
         { name = "crates" },
     },
 

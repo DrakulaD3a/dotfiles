@@ -21,13 +21,13 @@ return {
 
         -- Enable indenting using treesitter
         indent = {
-            enable = true;
+            enable = true,
         },
 
         playground = {
             enable = true,
             disable = {},
-            updatetime = 0, -- Debounced time for highlighting nodes in the playground from source code
+            updatetime = 0,          -- Debounced time for highlighting nodes in the playground from source code
             persist_queries = false, -- Whether the query persists across vim sessions
             keybindings = {
                 toggle_query_editor = 'o',

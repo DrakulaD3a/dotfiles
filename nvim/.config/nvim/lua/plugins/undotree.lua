@@ -1,7 +1,7 @@
 return {
     {
         "jiaoshijie/undotree",
-        config = function ()
+        config = function()
             local ut = require("undotree");
             ut.setup();
 

@@ -17,7 +17,8 @@ return {
                         ["rust-analyzer"] = {
                             checkOnSave = {
                                 command = "clippy",
-                                extraArgs = { "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery", "-W", "clippy::unwrap_used", "-W", "clippy::expect_used" },
+                                extraArgs = { "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery", "-W",
+                                    "clippy::unwrap_used", "-W", "clippy::expect_used" },
                             }
                         }
                     },

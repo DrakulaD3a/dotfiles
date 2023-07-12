@@ -7,7 +7,7 @@ return {
                 opts = {},
             }
         },
-        config = function ()
+        config = function()
             require("lukas.dap")
         end
     },

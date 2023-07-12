@@ -2,7 +2,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        config = function ()
+        config = function()
             require("telescope").setup({
                 defaults = {
                     file_ignore_patterns = { "node_modules", ".git", "libraries", "cmake" },

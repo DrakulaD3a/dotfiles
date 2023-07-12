@@ -31,7 +31,7 @@ o.incsearch = true
 
 o.swapfile = false
 o.backup = false
-o.undodir = { os.getenv("HOME").."/.local/share/nvim/undo" }
+o.undodir = { os.getenv("HOME") .. "/.local/share/nvim/undo" }
 o.undofile = true
 
 o.updatetime = 50

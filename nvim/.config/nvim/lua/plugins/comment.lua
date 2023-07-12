@@ -1,7 +1,7 @@
 return {
     {
         "numToStr/Comment.nvim",
-        config = function ()
+        config = function()
             require("Comment").setup {
                 -- What key to press in normal or visual mode to add comment
                 opleader = {
@@ -26,7 +26,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-        config = function ()
+        config = function()
             local todo_comments = require("todo-comments");
             todo_comments.setup {
                 signs = false,
