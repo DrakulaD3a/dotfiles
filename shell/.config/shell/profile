@@ -19,7 +19,7 @@ export XCURSOR_THEME=Bibata-Modern-Classic
 export XCURSOR_SIZE=22
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  xbacklight -set 50
+  light -S 50
   exec Hyprland
 fi
 

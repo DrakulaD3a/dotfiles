@@ -9,7 +9,6 @@
 	keepBackup = false
 [init]
 	defaultBranch = master
-
 [core]
 	excludesfile = /home/lukas/.config/git/ignore
     editor = nvim
