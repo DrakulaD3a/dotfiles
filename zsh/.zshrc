@@ -58,4 +58,4 @@ eval "$(zoxide init zsh)"
 # opam configuration
 [[ ! -r /home/lukas/.opam/opam-init/init.zsh ]] || source /home/lukas/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"

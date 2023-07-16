@@ -14,7 +14,7 @@
   "flash.nvim": { "branch": "main", "commit": "a8da6ff212c1885ecde26af477207742959c67d7" },
   "friendly-snippets": { "branch": "main", "commit": "6e0afe3be0ba43ef03d495a529de8fb22721c0d0" },
   "harpoon": { "branch": "master", "commit": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" },
-  "lazy.nvim": { "branch": "main", "commit": "da8b00581a52f5f87ad2aba9f52171fda7491f18" },
+  "lazy.nvim": { "branch": "main", "commit": "14d76aac4bd3ff07c1fca074c210f28f766a931e" },
   "lspsaga.nvim": { "branch": "main", "commit": "44f2beafd826083d07da5fc07f19a4eca1a19f73" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "fa50cc2540210845fccc3c0b9762417189a563a2" },
   "mason.nvim": { "branch": "main", "commit": "5ad3e113b0c3fde3caba8630599373046f6197e8" },
