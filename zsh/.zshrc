@@ -45,17 +45,3 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 source $HOME/.config/shell/profile
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-
-# Wasmer
-export WASMER_DIR="/home/lukas/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-
-# Zoxide
-eval "$(zoxide init zsh)"
-
-[ -f "/home/lukas/.ghcup/env" ] && source "/home/lukas/.ghcup/env" # ghcup-env
-
-# opam configuration
-[[ ! -r /home/lukas/.opam/opam-init/init.zsh ]] || source /home/lukas/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-eval "$(atuin init zsh --disable-up-arrow)"

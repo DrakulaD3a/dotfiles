@@ -13,15 +13,14 @@ return {
                         vim.keymap.set("n", "<leader>rd", rt.external_docs.open_external_docs, opts)
                         vim.keymap.set("n", "<leader>rw", rt.workspace_refresh.reload_workspace, opts)
                     end,
-                    settings = {
+                    --[[ settings = {
                         ["rust-analyzer"] = {
                             checkOnSave = {
                                 command = "clippy",
-                                extraArgs = { "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery", "-W",
-                                    "clippy::unwrap_used", "-W", "clippy::expect_used" },
+                                extraArgs = { "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery" },
                             }
                         }
-                    },
+                    }, ]]
                     standalone = false,
                 },
                 inlay_hints = {
@@ -41,6 +40,14 @@ return {
     {
         "saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },
+        opts = {},
+    },
+    {
+        "Canop/nvim-bacon",
+        filetype = "rust",
+        keys = {
+            { "<leader>rb", "<cmd>BaconList<CR>", desc = "Bacon List" },
+        },
         opts = {},
     },
 }

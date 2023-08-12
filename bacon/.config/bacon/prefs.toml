@@ -1,0 +1,33 @@
+summary = false
+wrap = false
+reverse = false
+
+[export]
+enabled = true
+path = ".bacon-locations"
+line_format = "{kind} {path}:{line}:{column} {message}"
+
+[keybindings]
+esc = "back"
+ctrl-c = "quit"
+ctrl-q = "quit"
+q = "quit"
+F5 = "rerun"
+s = "toggle-summary"
+w = "toggle-wrap"
+g = "scroll-to-top"
+shift-g = "scroll-to-bottom"
+k = "scroll-lines(-1)"
+j = "scroll-lines(1)"
+ctrl-u = "scroll-pages(-1)"
+ctrl-d = "scroll-pages(1)"
+a = "job:check-all"
+i = "job:initial"
+c = "job:clippy"
+d = "job:doc-open"
+t = "job:test"
+r = "job:run"
+b = "job:better-clippy"
+
+[jobs.better-clippy]
+command = ["cargo", "clippy", "--color", "always", "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery", "-W", "clippy::unwrap_used", "-W", "clippy::expect_used"]

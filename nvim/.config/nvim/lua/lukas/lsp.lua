@@ -64,3 +64,11 @@ lspconfig["lua_ls"].setup({
     },
     capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
 })
+
+lspconfig["ocamllsp"].setup({
+    capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
+})
+
+lspconfig["hls"].setup({
+    capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
+})
