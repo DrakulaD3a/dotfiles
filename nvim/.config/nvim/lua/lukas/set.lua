@@ -46,7 +46,7 @@ o.fillchars = { eob = " " }
 
 o.signcolumn = "yes"
 
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     pattern = "*",
     callback = function()
         o.formatoptions:remove("c")
@@ -60,3 +60,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
 o.guifont = "Hack Nerd Font Mono:h16"
 g.neovide_transparency = 0.9
 g.neovide_hide_mouse_when_typing = true
+g.perl_host_prog = "/usr/bin/perl"

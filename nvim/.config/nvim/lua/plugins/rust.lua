@@ -1,6 +1,7 @@
 return {
     {
         "simrat39/rust-tools.nvim",
+        ft = "rust",
         config = function()
             local rt = require("rust-tools");
             rt.setup({
@@ -13,14 +14,6 @@ return {
                         vim.keymap.set("n", "<leader>rd", rt.external_docs.open_external_docs, opts)
                         vim.keymap.set("n", "<leader>rw", rt.workspace_refresh.reload_workspace, opts)
                     end,
-                    --[[ settings = {
-                        ["rust-analyzer"] = {
-                            checkOnSave = {
-                                command = "clippy",
-                                extraArgs = { "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery" },
-                            }
-                        }
-                    }, ]]
                     standalone = false,
                 },
                 inlay_hints = {
@@ -44,7 +37,7 @@ return {
     },
     {
         "Canop/nvim-bacon",
-        filetype = "rust",
+        ft = "rust",
         keys = {
             { "<leader>rb", "<cmd>BaconList<CR>", desc = "Bacon List" },
         },
