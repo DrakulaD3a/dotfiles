@@ -1,4 +1,0 @@
-#!/bin/sh
-
-wifi=$(nmcli connection show | sed -n '1!p' | sed 's/  $/:/' | dmenu -p "Select wifi: " -l 20)
-nmcli device wifi connect "$wifi"

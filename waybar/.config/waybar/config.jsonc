@@ -1,7 +1,7 @@
 {
   "spacing": 4,
   "modules-left": ["wlr/workspaces"],
-  "modules-center": ["hyprland/submap"],
+  "modules-center": [],
   "modules-right": ["hyprland/language", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock"],
 
   // Modules configuration
@@ -47,7 +47,7 @@
   },
 
   "cpu": {
-    "format": " {usage}%",
+    "format": "  {usage}%",
     "states": { "warning": 90 },
     "tooltip": false
   },

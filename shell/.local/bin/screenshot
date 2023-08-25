@@ -1,4 +1,0 @@
-#!/bin/sh
-
-grim -g "$(slurp)" -t png /tmp/screenshot.png
-wl-copy < /tmp/screenshot.png

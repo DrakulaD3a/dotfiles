@@ -5,18 +5,8 @@ export PATH=$PATH:$HOME/.local/bin
 . "$HOME/.cargo/env"
 
 export EDITOR="nvim"
-export VISUAL="neovide"
 export TERMINAL="foot"
 export BROWSER="firefox"
-
-# Log WLR errors and logs to the hyprland log. Recommended
-export HYPRLAND_LOG_WLR=1
-
-# Tell XWayland to use a cursor theme
-export XCURSOR_THEME=Bibata-Modern-Classic
-
-# Set a cursor size
-export XCURSOR_SIZE=22
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   light -S 50
