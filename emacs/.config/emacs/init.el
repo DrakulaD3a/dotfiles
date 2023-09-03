@@ -2,6 +2,9 @@
 (setq package-user-dir "~/.local/share/emacs/packages")
 (setq user-emacs-directory "~/.local/share/emacs")
 
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode)
+
 (savehist-mode -1)
 (setq make-backup-files nil)
 (setq which-key-preserve-window-configuration t)
@@ -15,7 +18,7 @@
 
 (menu-bar-mode -1)
 
-(set-face-attribute 'default nil :font "Hack Nerd Font Mono" :height 160)
+(set-face-attribute 'default nil :font "Hack Nerd Font Mono" :height 130)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (load-theme 'wombat)
@@ -233,3 +236,15 @@
 (plist-put org-format-latex-options :scale 2.0)
 (setq org-startup-with-latex-preview t)
 (setq org-startup-with-inline-images t)
+
+;; (defun mymacs/lsp-mode-setup ()
+  ;; (setq lsp-headerline-breadcumb-segments '(path-up-to-project file symbols))
+  ;; (lsp-headerline-breadcumb-mode))
+
+;; (use-package lsp-mode
+  ;; :commands (lsp lsp-defered)
+  ;; :hook (lsp-mode . mymacs/lsp-mode-setup)
+  ;; :init
+  ;; (setq lsp-keymap-prefix "C-c l")
+  ;; :config
+  ;; (lsp-enable-which-key-integration t))

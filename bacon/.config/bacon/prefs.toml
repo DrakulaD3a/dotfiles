@@ -1,5 +1,5 @@
 summary = false
-wrap = false
+wrap = true
 reverse = false
 
 [export]
