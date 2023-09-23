@@ -1,11 +1,10 @@
 {
   "spacing": 4,
-  "modules-left": ["wlr/workspaces"],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
   "modules-right": ["hyprland/language", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock"],
 
-  // Modules configuration
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "on-click": "activate",
     "sort-by-number": true,
     "format": "{icon}",

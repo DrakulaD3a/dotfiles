@@ -61,3 +61,5 @@ o.guifont = "Hack Nerd Font Mono:h16"
 g.neovide_transparency = 0.9
 g.neovide_hide_mouse_when_typing = true
 g.perl_host_prog = "/usr/bin/perl"
+
+vim.filetype.add({extension = {wgsl = "wgsl"}})

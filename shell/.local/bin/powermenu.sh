@@ -16,7 +16,7 @@ case "$chosen" in
     $option2)
         hyprctl dispatch exit ;;
     $option3)
-        systemctl suspend && swaylock -i ~/personal/pictures/wallpapers/lock.png ;;
+        systemctl suspend && swaylock ;;
     $option4)
         systemctl reboot ;;
     $option5)

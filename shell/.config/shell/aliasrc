@@ -1,6 +1,6 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 command -v bat >/dev/null && alias cat="bat"
-command -v exa >/dev/null && alias ls="exa"
+command -v exa >/dev/null && alias ls="eza"
 
 # TMUX Aliases
 alias \

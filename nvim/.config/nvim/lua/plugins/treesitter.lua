@@ -5,11 +5,12 @@ return {
     },
     build = ":TSUpdate",
     opts = {
-        ensure_installed = { "rust", "c", "lua", "markdown", "markdown_inline", "vimdoc" },
+        ensure_installed = { "rust", "wgsl", "c", "lua", "markdown", "markdown_inline", "vimdoc", "html", "css",
+            "typescript", "tsx" },
 
         sync_install = false,
 
-        -- When opening file, I dont have treesitter downloaded for, automatically download
+        -- When opening file, if I dont have treesitter downloaded for, automatically download
         auto_install = true,
 
         -- Enable syntax highlighting using treesitter

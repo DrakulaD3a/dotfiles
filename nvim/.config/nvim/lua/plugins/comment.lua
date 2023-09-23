@@ -34,6 +34,9 @@ return {
                     FIXME = {
                         color = "warning",
                     },
+                    IDEA = {
+                        color = "hint",
+                    },
                 },
             }
         end,

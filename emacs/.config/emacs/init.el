@@ -210,7 +210,7 @@
   (org-roam-completion-everywhere t)
   (org-roam-capture-templates
    '(("d" "default" plain
-      "* ${title}\n%?\n\n\n** Podobné\n\n** Opačné\n\n** Vychází z\n\n** Vede k\n\n"
+      "* ${title}\n%?\n"
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :draft:\n")
       :unnarrowed t)))
 
@@ -236,15 +236,3 @@
 (plist-put org-format-latex-options :scale 2.0)
 (setq org-startup-with-latex-preview t)
 (setq org-startup-with-inline-images t)
-
-;; (defun mymacs/lsp-mode-setup ()
-  ;; (setq lsp-headerline-breadcumb-segments '(path-up-to-project file symbols))
-  ;; (lsp-headerline-breadcumb-mode))
-
-;; (use-package lsp-mode
-  ;; :commands (lsp lsp-defered)
-  ;; :hook (lsp-mode . mymacs/lsp-mode-setup)
-  ;; :init
-  ;; (setq lsp-keymap-prefix "C-c l")
-  ;; :config
-  ;; (lsp-enable-which-key-integration t))
