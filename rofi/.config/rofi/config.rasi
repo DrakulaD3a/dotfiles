@@ -1,8 +1,0 @@
-configuration {
-    display-drun: "Applications";
-    display-window: "Windows";
-    drun-display-format: "{name}";
-    modi: "window,run,drun";
-}
-
-@theme "/usr/share/rofi/themes/tokyonight.rasi"

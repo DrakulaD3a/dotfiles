@@ -32,3 +32,29 @@ eval "$(atuin init zsh --disable-up-arrow)"
 export PATH=$PATH:/usr/local/go/bin:/home/lukas/.local/share/gem/ruby/3.0.0/bin 
 
 eval $(perl -I$HOME/.local/share/perl5/lib/perl5/ -Mlocal::lib=$HOME/.local/share/perl5)
+
+eval $(starship init zsh)
+
+# bun completions
+[ -s "/home/lukas/.bun/_bun" ] && source "/home/lukas/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+function ya() {
+    tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+    yazi --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
+# pnpm
+export PNPM_HOME="/home/lukas/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

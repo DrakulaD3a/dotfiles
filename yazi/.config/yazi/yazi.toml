@@ -1,0 +1,17 @@
+[manager]
+layout = [1, 4, 3]
+sort_by = "natural"
+sort_sensitive = false
+sort_reverse = true
+sort_dir_first = true
+show_hidden = false
+show_symlink = true
+
+[opener]
+folder = [
+    { exec = '$EDITOR "$@"', block = true, display_name = "Open with $EDITOR" },
+]
+image = [
+    { exec = 'imv "$@"' },
+    { exec = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, display_name = "Show EXIF" },
+]
