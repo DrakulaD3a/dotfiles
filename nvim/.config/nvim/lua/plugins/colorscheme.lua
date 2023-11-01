@@ -16,5 +16,11 @@ return {
                 floats = "transparent",
             },
         },
-    }
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        opts = {
+            transparent = false,
+        },
+    },
 }

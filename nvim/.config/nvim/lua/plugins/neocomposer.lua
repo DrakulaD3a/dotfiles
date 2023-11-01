@@ -1,8 +1,6 @@
 return {
     "ecthelionvi/NeoComposer.nvim",
-    dependencies = {
-        "kkharji/sqlite.lua",
-    },
+    dependencies = { "kkharji/sqlite.lua" },
     opts = {
         notify = false,
         keymaps = {

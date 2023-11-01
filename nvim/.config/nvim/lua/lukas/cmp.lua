@@ -1,6 +1,5 @@
 local cmp = require("cmp")
 
---   פּ ﯟ   some other good icons
 local kind_icons = {
     Text = " ",
     Method = "m ",
@@ -51,6 +50,7 @@ cmp.setup({
         { name = "luasnip" },
         { name = "buffer",  keyword_lenght = 5 },
         { name = "crates" },
+        { name = "neorg" },
     },
 
     snippet = {
@@ -71,6 +71,7 @@ cmp.setup({
                 luasnip  = "[Snip]",
                 path     = "[Path]",
                 crates   = "[Crate]",
+                neorg    = "[Neorg]",
             })[entry.source.name]
 
             return vim_item
