@@ -37,10 +37,10 @@ return {
                         notes = "~/personal/notes",
                     },
                     default_workspace = "notes",
-                    open_last_workspace = true,
                 },
             },
             ["core.integrations.telescope"] = {},
+            ["core.summary"] = {},
         },
     }
 }

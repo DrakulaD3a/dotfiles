@@ -4,7 +4,7 @@ options=" Tokyonight\n Kanagawa\n Adapta"
 
 chosen=$(echo -e "$options" | wofi -d -i -p "Theme")
 
-if [[ $chosen == " light" ]]; then
+if [[ $chosen == " Adapta" ]]; then
     ~/.local/bin/light-gtk.sh
     swww img -t none ~/personal/pictures/wallpapers/light-wallpaper.jpg
     hyprctl hyprpaper wallpaper "eDP-1,~/personal/pictures/wallpapers/light-wallpaper.jpg"

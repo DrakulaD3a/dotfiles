@@ -17,6 +17,7 @@ return {
             vim.keymap.set("n", "<leader>fs", builtin.live_grep, {})
 
             require("telescope").load_extension("macros")
+            require("telescope").load_extension("distant")
 
             vim.keymap.set("n", "<leader>fq", "<cmd>Telescope macros<CR>", {})
         end,

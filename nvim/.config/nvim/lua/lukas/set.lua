@@ -28,6 +28,7 @@ o.termguicolors = true
 
 o.hlsearch = false
 o.incsearch = true
+o.inccommand = "split"
 
 o.swapfile = false
 o.backup = false
@@ -36,9 +37,10 @@ o.undofile = true
 
 o.updatetime = 50
 
--- Disable statusline
--- o.laststatus = 0
--- o.cmdheight = 0
+o.virtualedit = "block"
+
+o.ignorecase = true
+o.smartcase = true
 
 o.laststatus = 3
 
@@ -56,10 +58,12 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     end,
 })
 
--- For neovide
-o.guifont = "Hack Nerd Font Mono:h16"
-g.neovide_transparency = 0.9
-g.neovide_hide_mouse_when_typing = true
 g.perl_host_prog = "/usr/bin/perl"
 
-vim.filetype.add({extension = {wgsl = "wgsl"}})
+-- For neovide
+o.guifont = "Hack Nerd Font Mono:h14"
+g.neovide_transparency = 0.9
+g.neovide_hide_mouse_when_typing = true
+g.neovide_cursor_animation_length = 0.05
+
+vim.filetype.add({ extension = { wgsl = "wgsl" } })
