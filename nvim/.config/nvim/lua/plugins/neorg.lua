@@ -31,6 +31,17 @@ return {
                     extensions = "all",
                 },
             },
+            ["core.esupports.metagen"] = {
+                config = {
+                    type = "empty",
+                    template = {
+                        { "title", function() return vim.fn.expand("%:p:t:r") end },
+                        { "description", "" },
+                        { "authors", "Lukáš Strnad" },
+                        { "categories", "[ ]" },
+                    },
+                },
+            },
             ["core.dirman"] = {
                 config = {
                     workspaces = {

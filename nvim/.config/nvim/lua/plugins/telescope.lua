@@ -20,6 +20,7 @@ return {
             require("telescope").load_extension("distant")
 
             vim.keymap.set("n", "<leader>fq", "<cmd>Telescope macros<CR>", {})
+            vim.keymap.set("n", "<leader>fe", "<cmd>Telescope emoji<CR>", {})
         end,
     },
 }

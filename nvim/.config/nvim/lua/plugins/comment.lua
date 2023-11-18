@@ -26,19 +26,16 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-        config = function()
-            local todo_comments = require("todo-comments");
-            todo_comments.setup {
-                signs = false,
-                keywords = {
-                    FIXME = {
-                        color = "warning",
-                    },
-                    IDEA = {
-                        color = "hint",
-                    },
+        opts = {
+            signs = false,
+            keywords = {
+                FIXME = {
+                    color = "warning",
                 },
-            }
-        end,
+                IDEA = {
+                    color = "hint",
+                },
+            },
+        }
     },
 }

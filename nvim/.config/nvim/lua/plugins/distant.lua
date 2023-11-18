@@ -4,9 +4,22 @@ return {
     config = function()
         require('distant'):setup({
             servers = {
-                ['rust_analyzer'] = {
+                ['*'] = {
                     lsp = {
-                        root_dir = '/home/lukas/catscii',
+                        ['catscii'] = {
+                            cmd = '/home/lukas/.local/share/nvim/mason/bin/rust-analyzer',
+                            root_dir = 'catscii',
+                            file_type = { 'rust' },
+                            on_exit = function(code, signal, client_id)
+                                local prefix = '[Client ' .. tostring(client_id) .. ']'
+                                print(prefix .. ' LSP exited with code ' .. tostring(code))
+
+                                -- Signal can be nil
+                                if signal ~= nil then
+                                    print(prefix .. ' Signal ' .. tostring(signal))
+                                end
+                            end,
+                        },
                     },
                 },
             },
