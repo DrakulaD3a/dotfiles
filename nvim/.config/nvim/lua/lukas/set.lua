@@ -48,8 +48,6 @@ o.fillchars = { eob = " " }
 
 o.signcolumn = "yes"
 
-o.conceallevel = 2
-
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     pattern = "*",
     callback = function()

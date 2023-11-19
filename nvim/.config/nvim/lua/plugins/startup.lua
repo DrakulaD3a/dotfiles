@@ -56,6 +56,7 @@ return {
                     { " Recent Files", "Telescope oldfiles", "<leader>of" },
                     { " Colorschemes", "Telescope colorscheme", "<leader>cs" },
                     { " New File", "lua require'startup'.new_file()", "<leader>nf" },
+                    { " Find Todos", "TodoTelescope", "<leader>tt" },
                 },
                 oldfile_amount = 0,
                 highlight = "String",

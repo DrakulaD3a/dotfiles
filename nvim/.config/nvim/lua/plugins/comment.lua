@@ -1,25 +1,23 @@
 return {
     {
         "numToStr/Comment.nvim",
-        config = function()
-            require("Comment").setup {
-                -- What key to press in normal or visual mode to add comment
-                opleader = {
-                    -- Line comment - //
-                    line = "gc",
-                    -- Block comment - /* */
-                    block = "gb",
-                },
+        opts = {
+            -- What key to press in normal or visual mode to add comment
+            opleader = {
+                -- Line comment - //
+                line = "gc",
+                -- Block comment - /* */
+                block = "gb",
+            },
 
-                mappings = {
-                    -- Mappings like gcc, gbc, ...
-                    basic = true,
+            mappings = {
+                -- Mappings like gcc, gbc, ...
+                basic = true,
 
-                    -- Mappings like gco, gcO, gcA
-                    extra = true,
-                },
-            }
-        end,
+                -- Mappings like gco, gcO, gcA
+                extra = true,
+            },
+        }
     },
     {
         "folke/todo-comments.nvim",

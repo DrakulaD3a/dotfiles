@@ -21,6 +21,7 @@ return {
 
             vim.keymap.set("n", "<leader>fq", "<cmd>Telescope macros<CR>", {})
             vim.keymap.set("n", "<leader>fe", "<cmd>Telescope emoji<CR>", {})
+            vim.keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<CR>", {})
         end,
     },
 }
