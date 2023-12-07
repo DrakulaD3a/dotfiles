@@ -1,3 +1,6 @@
+------------------------------------------------
+--------------------- OPTS ---------------------
+------------------------------------------------
 local o = vim.opt
 local g = vim.g
 
@@ -48,19 +51,64 @@ o.fillchars = { eob = " " }
 
 o.signcolumn = "yes"
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = "*",
+g.perl_host_prog = "/usr/bin/perl"
+
+
+------------------------------------------------
+-------------------- REMAPS --------------------
+------------------------------------------------
+local remap = vim.keymap.set
+
+remap("n", "<C-u>", "<C-u>zz")
+remap("n", "<C-d>", "<C-d>zz")
+
+remap("v", "J", ":m '>+1<CR>gv=gv")
+remap("v", "K", ":m '<-2<CR>gv=gv")
+
+remap("n", "<C-e>", vim.cmd.cprevious, { silent = true })
+remap("n", "<C-c>", vim.cmd.cnext, { silent = true })
+
+remap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+remap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+
+------------------------------------------------
+------------------- AUTOCMDS -------------------
+------------------------------------------------
+vim.api.nvim_create_augroup("FileTypes", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = "*.norg",
+    group = "FileTypes",
     callback = function()
-        o.formatoptions:remove("c")
-        o.formatoptions:remove("r")
-        o.formatoptions:remove("o")
-        vim.cmd("TSBufEnable highlight")
+        o.conceallevel = 2
+        remap("n", "<leader>ff", "<cmd>Telescope neorg find_norg_files<CR>")
     end,
 })
 
-g.perl_host_prog = "/usr/bin/perl"
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*.astro", "*.js*", "*.ts*", "*.css", "*.html", "*.ocaml", "*.php" },
+    group = "FileTypes",
+    callback = function()
+        o.tabstop = 2
+        o.shiftwidth = 2
+        o.softtabstop = 2
+    end,
+})
 
--- For neovide
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*.ua" },
+    group = "FileTypes",
+    callback = function()
+        vim.lsp.start({
+            name = 'uiua_lsp',
+            cmd = { 'uiua', 'lsp' },
+        })
+    end,
+})
+
+------------------------------------------------
+------------------- NEOVIDE --------------------
+------------------------------------------------
 o.guifont = "Hack Nerd Font Mono:h14"
 g.neovide_transparency = 0.9
 g.neovide_hide_mouse_when_typing = true

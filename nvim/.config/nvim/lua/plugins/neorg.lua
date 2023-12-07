@@ -3,7 +3,7 @@ return {
     build = ":Neorg sync-parsers",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-neorg/neorg-telescope"
+        "nvim-neorg/neorg-telescope",
     },
     opts = {
         load = {

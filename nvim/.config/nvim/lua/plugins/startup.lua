@@ -70,6 +70,7 @@ return {
                     { "󰙅 Open Oil", "lua require'oil'.open()", "<leader>ft" },
                     { "󱞁 Neorg open", "Neorg index", "<leader>no" },
                     { "󰣀 Distant connect", ":lua ServersPicker()", "<leader>dc" },
+                    { "󰣀 Distant open", "DistantOpen", "<leader>do" },
                 },
                 oldfile_amount = 0,
                 highlight = "String",

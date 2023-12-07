@@ -11,3 +11,5 @@ alias \
 alias g="git"
 alias c="cargo"
 alias acli="arduino-cli"
+
+alias zig12="~/.zig/zig"
