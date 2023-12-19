@@ -6,7 +6,7 @@ command -v exa >/dev/null && alias ls="eza"
 alias \
   tn="tmux new" \
   ta="tmux attach" \
-  td="tmux detach"
+  ts="tmux-sessionizer"
 
 alias g="git"
 alias c="cargo"

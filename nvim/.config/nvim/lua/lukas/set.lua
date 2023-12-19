@@ -68,7 +68,6 @@ remap("v", "K", ":m '<-2<CR>gv=gv")
 remap("n", "<C-e>", vim.cmd.cprevious, { silent = true })
 remap("n", "<C-c>", vim.cmd.cnext, { silent = true })
 
-remap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 remap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 

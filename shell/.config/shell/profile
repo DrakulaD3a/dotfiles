@@ -1,5 +1,3 @@
-export PERSONAL="$HOME/personal/"
-
 export PATH=$PATH:$HOME/.local/bin
 
 . "$HOME/.cargo/env"
@@ -12,8 +10,6 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   light -S 50
   exec Hyprland
 fi
-
-bindkey -s ^f "tmux-sessionizer\n"
 
 # Wasmer
 export WASMER_DIR="/home/lukas/.wasmer"
