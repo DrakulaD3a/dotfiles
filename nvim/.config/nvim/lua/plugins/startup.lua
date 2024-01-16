@@ -5,7 +5,7 @@ return {
         -- Custom telescope picker for Distant servers
         ServersPicker = function(opts)
             opts = opts or {}
-            require "telescope.pickers".new(opts, {
+            require("telescope.pickers").new(opts, {
                 prompt_title = "Select Server",
                 finder = require "telescope.finders".new_table {
                     results = { "deimos", "phobos" }
@@ -67,8 +67,8 @@ return {
                 align = "center",
                 fold_section = false,
                 content = {
-                    { "󰙅 Open Oil", "lua require'oil'.open()", "<leader>ft" },
-                    { "󱞁 Neorg open", "Neorg index", "<leader>no" },
+                    { "󰙅 Oil Open", "lua require'oil'.open()", "<leader>ft" },
+                    { "󱞁 Obsidian open", "edit ~/personal/obsidian-vault/welcome.md", "<leader>oo" },
                     { "󰣀 Distant connect", ":lua ServersPicker()", "<leader>dc" },
                     { "󰣀 Distant open", "DistantOpen", "<leader>do" },
                 },

@@ -1,74 +1,55 @@
-require("mason").setup()
-require("mason-lspconfig").setup()
-require("neodev").setup();
+local M = {}
 
-local lspconfig = require "lspconfig"
-local cmp_nvim_lsp = require "cmp_nvim_lsp"
+M.on_attach = function(client, bufnr)
+    local nmap = function(keys, func)
+        vim.keymap.set("n", keys, func, { buffer = bufnr, silent = true, noremap = true })
+    end
 
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local ok, builtin = pcall(require, "telescope.builtin")
+    if not ok then
+        return
+    end
+
+    local ok, actions_preview = pcall(require, "actions-preview")
+    if not ok then
+        return
+    end
+
+    nmap("gd", builtin.lsp_definitions)
+    nmap("gD", vim.lsp.buf.declaration)
+
+    nmap("K", vim.lsp.buf.hover)
+
+    nmap("<leader>fm", vim.lsp.buf.format)
+    nmap("<leader>ca", actions_preview.code_actions)
+    nmap("<leader>rr", builtin.lsp_references)
+    nmap("<leader>rn", vim.lsp.buf.rename)
+
+    nmap("g[", vim.diagnostic.goto_prev)
+    nmap("g]", vim.diagnostic.goto_next)
+    nmap("gl", vim.diagnostic.open_float)
 end
 
-vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function()
-        vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "g[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "g]", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>fm", function()
-            vim.lsp.buf.format { async = true }
-        end, { noremap = true, silent = true })
+M.additional_servers = function()
+    local ok, lspconfig = pcall(require, "lspconfig")
+    if not ok then
+        return
     end
-})
 
-vim.diagnostic.config({
-    float = {
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-        style = "minimal",
-    },
-    -- disable virtual text
-    virtual_text = false,
-    signs = true,
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
-})
+    local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+    if not ok then
+        return
+    end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-for _, server in pairs(require("mason-lspconfig").get_installed_servers()) do
-    lspconfig[server].setup({
+    lspconfig["ocamllsp"].setup({
+        capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
+    })
+
+    lspconfig["hls"].setup({
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
     })
 end
 
--- Neodev stuff
-lspconfig["lua_ls"].setup({
-    settings = {
-        Lua = {
-            completion = {
-                callSnippet = "Replace"
-            },
-            workspace = {
-                checkThirdParty = false,
-            },
-        },
-    },
-    capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
-})
-
-lspconfig["ocamllsp"].setup({
-    capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
-})
-
-lspconfig["hls"].setup({
-    capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
-})
+return M

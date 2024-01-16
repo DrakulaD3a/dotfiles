@@ -3,7 +3,11 @@ return {
         "simrat39/rust-tools.nvim",
         ft = "rust",
         config = function()
-            local rt = require("rust-tools");
+            local ok, rt = pcall(require, "rust-tools");
+            if not ok then
+                return
+            end
+
             rt.setup({
                 server = {
                     on_attach = function(_, bufnr)

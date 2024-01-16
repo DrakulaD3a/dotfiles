@@ -2,7 +2,12 @@ return {
     'chipsenkbeil/distant.nvim',
     branch = 'v0.3',
     config = function()
-        require('distant'):setup({
+        local ok, distant = pcall(require, 'distant')
+        if not ok then
+            return
+        end
+
+        distant:setup({
             servers = {
                 ['*'] = {
                     lsp = {

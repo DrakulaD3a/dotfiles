@@ -4,9 +4,12 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         branch = "harpoon2",
         config = function()
-            local harpoon = require("harpoon")
+            local ok, harpoon = pcall(require, "harpoon")
+            if not ok then
+                return
+            end
 
-            harpoon:setup()
+            harpoon:setup({})
 
             vim.keymap.set("n", "<leader>hm", function() harpoon:list():append() end);
             vim.keymap.set("n", "<leader>ht", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end);

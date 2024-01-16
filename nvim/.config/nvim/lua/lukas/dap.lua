@@ -1,37 +1,35 @@
-local dap = require("dap");
-local ui = require("dapui");
+local M = {}
 
-vim.keymap.set("n", "<F5>", dap.continue, { desc = "start debugging" })
-vim.keymap.set("n", "<F10>", dap.step_over, { desc = "step over" })
-vim.keymap.set("n", "<F11>", dap.step_into, { desc = "step into" })
-vim.keymap.set("n", "<F12>", dap.step_out, { desc = "step out" })
-vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "toggle breakpoint" })
-vim.keymap.set("n", "<leader>dv", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
-    { desc = "toggle breakpoint" })
-vim.keymap.set("n", "<leader>dr", dap.repl.toggle, { desc = "open repl" })
-vim.keymap.set("n", "<leader>du", ui.toggle, { desc = "toggle dap ui" })
+M.on_attach = function()
+    local ok, dap = pcall(require, "dap");
+    if not ok then
+        return
+    end
 
-vim.keymap.set("n", "<leader>dl", require("telescope").extensions.dap.list_breakpoints, { desc = "list breakpoints" })
+    local ok, ui = pcall(require, "dapui");
+    if not ok then
+        return
+    end
 
-dap.adapters.lldb = {
-    type = "executable",
-    command = "/usr/bin/lldb-vscode",
-    name = "lldb",
-}
+    local ok, telescope = pcall(require, "telescope");
+    if not ok then
+        return
+    end
 
-dap.configurations.rust = {
-    {
-        name = "Launch",
-        type = "lldb",
-        request = "launch",
-        program = function()
-            ---@diagnostic disable-next-line: redundant-parameter
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-        end,
-        cwd = "${workspaceFolder}",
-        stopOnEntry = false,
-        args = {},
+    local nmap = function(keys, func)
+        vim.keymap.set("n", keys, func, { noremap = true, silent = true })
+    end
 
-        runInTerminal = false,
-    }
-}
+    nmap("<F5>", dap.continue)
+    nmap("<F10>", dap.step_over)
+    nmap("<F11>", dap.step_into)
+    nmap("<F12>", dap.step_out)
+    nmap("<leader>db", dap.toggle_breakpoint)
+    nmap("<leader>dv", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
+    nmap("<leader>dr", dap.repl.toggle)
+    nmap("<leader>du", ui.toggle)
+
+    nmap("<leader>dl", telescope.extensions.dap.list_breakpoints)
+end
+
+return M

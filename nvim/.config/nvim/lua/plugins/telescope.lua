@@ -3,9 +3,18 @@ return {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("telescope").setup({
+            local ok, telescope = pcall(require, "telescope")
+            if not ok then
+                return
+            end
+
+            telescope.setup({
                 defaults = {
                     file_ignore_patterns = { "node_modules", ".git", "libraries", "cmake" },
+                    mappings = {
+                        i = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
+                        n = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
+                    }
                 }
             })
             local builtin = require("telescope.builtin")
