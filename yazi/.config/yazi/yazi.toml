@@ -9,9 +9,12 @@ show_symlink = true
 
 [opener]
 folder = [
-    { exec = '$EDITOR "$@"', block = true, display_name = "Open with $EDITOR" },
+    { exec = '$EDITOR "$@"', block = true, desc = "Open with $EDITOR" },
 ]
 image = [
     { exec = 'imv "$@"' },
-    { exec = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, display_name = "Show EXIF" },
+    { exec = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF" },
+]
+pdf = [
+    { exec = 'zathura "$@"' },
 ]

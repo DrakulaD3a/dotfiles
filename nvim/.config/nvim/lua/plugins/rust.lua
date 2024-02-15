@@ -17,6 +17,7 @@ return {
                         vim.keymap.set("n", "<leader>rc", rt.open_cargo_toml.open_cargo_toml, opts)
                         vim.keymap.set("n", "<leader>rd", rt.external_docs.open_external_docs, opts)
                         vim.keymap.set("n", "<leader>rw", rt.workspace_refresh.reload_workspace, opts)
+                        require("lukas.lsp").on_attach(_, bufnr)
                     end,
                     standalone = false,
                 },
