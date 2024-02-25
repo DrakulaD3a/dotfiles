@@ -12,6 +12,8 @@ alias g="git"
 alias c="cargo"
 alias acli="arduino-cli"
 
+alias venv="source ~/.local/bin/activate_venv.sh"
+
 alias zig12="~/.zig/zig"
 
 function ya() {
