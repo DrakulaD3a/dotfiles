@@ -11,3 +11,14 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
         o.softtabstop = 2
     end,
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*.md" },
+    group = "FileTypes",
+    callback = function()
+        o.tabstop = 3
+        o.shiftwidth = 3
+        o.softtabstop = 3
+        o.conceallevel = 1
+    end,
+})

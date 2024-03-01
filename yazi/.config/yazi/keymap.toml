@@ -524,6 +524,11 @@ keymap = [
     { on = [
         "~",
     ], exec = "help", desc = "Open help" },
+
+    # Backspace
+    { on = [
+        "<Backspace>",
+    ], exec = "backspace" },
 ]
 
 [help]
