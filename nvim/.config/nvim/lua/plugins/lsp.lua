@@ -3,12 +3,20 @@ return {
     dependencies = {
         { "williamboman/mason.nvim", config = true },
         "williamboman/mason-lspconfig.nvim",
-        { "j-hui/fidget.nvim",       config = true },
         { "folke/neodev.nvim",       config = true },
         "hrsh7th/cmp-nvim-lsp",
         "nvimtools/none-ls.nvim",
         "aznhe21/actions-preview.nvim",
-        "stevearc/conform.nvim",
+        {
+            "j-hui/fidget.nvim",
+            opts = {
+                notification = {
+                    window = {
+                        winblend = 0,
+                    }
+                }
+            }
+        },
     },
     config = function()
         local ok, mason = pcall(require, "mason")
@@ -89,6 +97,19 @@ return {
                     },
                 })
             end,
+            ["rust_analyzer"] = function()
+                lspconfig["rust_analyzer"].setup({
+                    capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
+                    on_attach = require("lukas.lsp").on_attach,
+                    settings = {
+                        ["rust-analyzer"] = {
+                            check = {
+                                allTargets = false,
+                            },
+                        },
+                    },
+                })
+            end,
         })
 
         require("lukas.lsp").additional_servers()
@@ -102,6 +123,7 @@ return {
             sources = {
                 null_ls.builtins.formatting.prettierd,
                 null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.alejandra,
             },
         })
 

@@ -6,6 +6,7 @@ return {
             "nvim-telescope/telescope-dap.nvim",
             { "rcarriga/nvim-dap-ui", config = true },
             "jay-babu/mason-nvim-dap.nvim",
+            "nvim-neotest/nvim-nio",
         },
         config = function()
             local ok, mason_nvim_dap = pcall(require, "mason-nvim-dap");

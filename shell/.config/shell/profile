@@ -46,3 +46,5 @@ esac
 # pnpm end
 
 export NODE_OPTIONS=--no-deprecation
+
+export PATH=/home/lukas/.cache/rebar3/bin:$PATH

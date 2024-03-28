@@ -68,7 +68,6 @@ return {
                 fold_section = false,
                 content = {
                     { "󰙅 Oil Open", "lua require'oil'.open()", "<leader>ft" },
-                    { "󱞁 Obsidian open", "edit ~/personal/obsidian-vault/welcome.md", "<leader>oo" },
                     { "󰣀 Distant connect", ":lua ServersPicker()", "<leader>dc" },
                     { "󰣀 Distant open", "DistantOpen", "<leader>do" },
                 },

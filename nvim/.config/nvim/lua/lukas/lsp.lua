@@ -43,13 +43,16 @@ M.additional_servers = function()
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-    lspconfig["ocamllsp"].setup({
+    local opts = {
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
-    })
+        on_attach = require("lukas.lsp").on_attach,
+    }
 
-    lspconfig["hls"].setup({
-        capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
-    })
+    lspconfig["ocamllsp"].setup(opts)
+
+    lspconfig["hls"].setup(opts)
+
+    lspconfig["gleam"].setup(opts)
 end
 
 return M

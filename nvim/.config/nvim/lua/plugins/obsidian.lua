@@ -57,7 +57,7 @@ return {
             return name
         end,
         templates = {
-            subdir = "templates",
+            subdir = "99 - Meta/templates",
         },
         follow_url_func = function(url)
             -- Open the URL in the default web browser.
