@@ -8,13 +8,13 @@ show_hidden = false
 show_symlink = true
 
 [opener]
-folder = [{ exec = '$EDITOR "$@"', block = true, desc = "Open with $EDITOR" }]
-text = [{ exec = '$EDITOR "$@"', block = true, desc = "Open with $EDITOR" }]
+folder = [{ run = '$EDITOR "$@"', block = true, desc = "Open with $EDITOR" }]
+text = [{ run = '$EDITOR "$@"', block = true, desc = "Open with $EDITOR" }]
 image = [
-    { exec = 'imv "$@"', desc = "Open with image viewer" },
-    { exec = 'gimp "$@"', desc = "Open with gimp" },
+    { run = 'imv "$@"', desc = "Open with image viewer" },
+    { run = 'gimp "$@"', desc = "Open with gimp" },
 ]
-pdf = [{ exec = 'zathura "$@"', desc = "Open with pdf viewer" }]
+pdf = [{ run = 'zathura "$@"', desc = "Open with pdf viewer" }]
 
 # FIXME: Doesn't work
 [open]
@@ -33,4 +33,4 @@ rules = [
 ]
 
 [plugin]
-prepend_previewers = [{ name = "*.md", exec = "glow" }]
+prepend_previewers = [{ name = "*.md", run = "glow" }]
