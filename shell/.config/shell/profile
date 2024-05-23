@@ -23,13 +23,9 @@ eval "$(zoxide init zsh)"
 # opam configuration
 [[ ! -r /home/lukas/.opam/opam-init/init.zsh ]] || source /home/lukas/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-eval "$(atuin init zsh --disable-up-arrow)"
-
 export PATH=$PATH:/usr/local/go/bin:/home/lukas/.local/share/gem/ruby/3.0.0/bin 
 
 eval $(perl -I$HOME/.local/share/perl5/lib/perl5/ -Mlocal::lib=$HOME/.local/share/perl5)
-
-eval "$(starship init zsh)"
 
 # bun completions
 [ -s "/home/lukas/.bun/_bun" ] && source "/home/lukas/.bun/_bun"
@@ -48,3 +44,5 @@ esac
 export NODE_OPTIONS=--no-deprecation
 
 export PATH=/home/lukas/.cache/rebar3/bin:$PATH
+
+eval "$(fzf --zsh)"

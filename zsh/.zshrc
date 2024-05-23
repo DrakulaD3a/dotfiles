@@ -1,28 +1,60 @@
-# Enable colors and change prompt:
-autoload -U colors && colors	# Load colors
-PS1="%B[%n@%M %~]$%b "
-setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
-setopt interactive_comments
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# History in cache directory:
-HISTSIZE=10000000
-SAVEHIST=10000000
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Load aliases and shortcuts if existent.
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+if [ ! -d $ZINIT_HOME ]; then
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-# Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)		# Include hidden files.
+source "${ZINIT_HOME}/zinit.zsh"
 
-# vi mode
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-completions
+
+autoload -U compinit && compinit
+# Include hidden files.
+_comp_options+=(globdots)
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 bindkey -v
-export KEYTIMEOUT=1
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
+if [ ! -f "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history" ]; then 
+    touch "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+fi
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt autocd
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ]; then 
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+fi
+
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile" ]; then
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile"
+fi
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
@@ -39,7 +71,3 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile"
-# Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
