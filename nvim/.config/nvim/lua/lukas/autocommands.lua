@@ -3,7 +3,7 @@ local o = vim.opt
 vim.api.nvim_create_augroup("FileTypes", { clear = true })
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = { "*.astro", "*.js*", "*.ts*", "*.css", "*.html", "*.ocaml", "*.php", "*.gleam", "*.py" },
+    pattern = { "*.astro", "*.js*", "*.ts*", "*.css", "*.html", "*.ocaml", "*.php", "*.gleam" },
     group = "FileTypes",
     callback = function()
         o.tabstop = 2
