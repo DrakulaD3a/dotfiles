@@ -9,7 +9,7 @@ return {
             "nvim-neotest/nvim-nio",
         },
         config = function()
-            local ok, mason_nvim_dap = pcall(require, "mason-nvim-dap");
+            local ok, mason_nvim_dap = pcall(require, "mason-nvim-dap")
             if not ok then
                 return
             end
@@ -24,6 +24,6 @@ return {
             })
 
             require("lukas.dap").on_attach()
-        end
+        end,
     },
 }

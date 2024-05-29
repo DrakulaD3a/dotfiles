@@ -14,8 +14,8 @@ return {
                     mappings = {
                         i = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
                         n = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
-                    }
-                }
+                    },
+                },
             })
             local builtin = require("telescope.builtin")
 

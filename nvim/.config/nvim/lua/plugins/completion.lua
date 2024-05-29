@@ -39,7 +39,7 @@ return {
                     { name = "nvim_lsp" },
                     { name = "path" },
                     { name = "luasnip" },
-                    { name = "buffer",  keyword_lenght = 5 },
+                    { name = "buffer", keyword_lenght = 5 },
                     { name = "crates" },
                 },
 
@@ -57,10 +57,10 @@ return {
                         vim_item.menu = ({
                             nvim_lsp = "[LSP]",
                             nvim_lua = "[API]",
-                            buffer   = "[File]",
-                            luasnip  = "[Snip]",
-                            path     = "[Path]",
-                            crates   = "[Crate]",
+                            buffer = "[File]",
+                            luasnip = "[Snip]",
+                            path = "[Path]",
+                            crates = "[Crate]",
                         })[entry.source.name]
 
                         return vim_item
@@ -84,9 +84,9 @@ return {
 
             require("luasnip.loaders.from_vscode").lazy_load()
 
-            ls.config.set_config {
+            ls.config.set_config({
                 history = true,
-            }
+            })
 
             vim.keymap.set({ "i", "s" }, "<C-k>", function()
                 if ls.expand_or_jumpable() then
@@ -99,6 +99,6 @@ return {
                     ls.jump(-1)
                 end
             end, { silent = true })
-        end
+        end,
     },
 }

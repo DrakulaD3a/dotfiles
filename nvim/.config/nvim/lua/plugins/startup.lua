@@ -5,25 +5,27 @@ return {
         -- Custom telescope picker for Distant servers
         ServersPicker = function(opts)
             opts = opts or {}
-            require("telescope.pickers").new(opts, {
-                prompt_title = "Select Server",
-                finder = require "telescope.finders".new_table {
-                    results = { "deimos", "phobos" }
-                },
-                sorter = require "telescope.config".values.generic_sorter(opts),
-                attach_mappings = function(prompt_bufnr)
-                    require("telescope.actions").select_default:replace(function()
-                        local selection = require "telescope.actions.state".get_selected_entry()
-                        require "telescope.actions".close(prompt_bufnr)
-                        vim.cmd("DistantConnect ssh://" .. selection.value)
-                    end)
+            require("telescope.pickers")
+                .new(opts, {
+                    prompt_title = "Select Server",
+                    finder = require("telescope.finders").new_table({
+                        results = { "deimos", "phobos" },
+                    }),
+                    sorter = require("telescope.config").values.generic_sorter(opts),
+                    attach_mappings = function(prompt_bufnr)
+                        require("telescope.actions").select_default:replace(function()
+                            local selection = require("telescope.actions.state").get_selected_entry()
+                            require("telescope.actions").close(prompt_bufnr)
+                            vim.cmd("DistantConnect ssh://" .. selection.value)
+                        end)
 
-                    return true
-                end,
-            }):find()
+                        return true
+                    end,
+                })
+                :find()
         end
 
-        require "startup".setup({
+        require("startup").setup({
             header = {
                 type = "text",
                 oldfiles_directory = false,
@@ -94,5 +96,5 @@ return {
                 "footer",
             },
         })
-    end
+    end,
 }

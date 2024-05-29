@@ -17,7 +17,7 @@ return {
                 -- Mappings like gco, gcO, gcA
                 extra = true,
             },
-        }
+        },
     },
     {
         "folke/todo-comments.nvim",
@@ -34,6 +34,6 @@ return {
                     color = "hint",
                 },
             },
-        }
+        },
     },
 }

@@ -3,9 +3,8 @@ return {
     dependencies = {
         { "williamboman/mason.nvim", config = true },
         "williamboman/mason-lspconfig.nvim",
-        { "folke/neodev.nvim",       config = true },
+        { "folke/neodev.nvim", config = true },
         "hrsh7th/cmp-nvim-lsp",
-        "nvimtools/none-ls.nvim",
         "aznhe21/actions-preview.nvim",
         {
             "j-hui/fidget.nvim",
@@ -13,9 +12,9 @@ return {
                 notification = {
                     window = {
                         winblend = 0,
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
     },
     config = function()
@@ -30,7 +29,7 @@ return {
                 icons = {
                     package_installed = "✓",
                     package_pending = "➜",
-                    package_uninstalled = "✗"
+                    package_uninstalled = "✗",
                 },
             },
         })
@@ -88,7 +87,7 @@ return {
                     settings = {
                         Lua = {
                             completion = {
-                                callSnippet = "Replace"
+                                callSnippet = "Replace",
                             },
                             workspace = {
                                 checkThirdParty = false,
@@ -113,19 +112,6 @@ return {
         })
 
         require("lukas.lsp").additional_servers()
-
-        local ok, null_ls = pcall(require, "null-ls")
-        if not ok then
-            return
-        end
-
-        null_ls.setup({
-            sources = {
-                null_ls.builtins.formatting.prettierd,
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.alejandra,
-            },
-        })
 
         vim.diagnostic.config({
             float = {

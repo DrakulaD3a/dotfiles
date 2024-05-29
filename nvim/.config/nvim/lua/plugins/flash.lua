@@ -5,8 +5,8 @@ return {
         modes = {
             char = {
                 keys = {},
-            }
-        }
+            },
+        },
     },
     keys = {
         {
@@ -18,7 +18,7 @@ return {
                         mode = function(str)
                             return "\\<" .. str
                         end,
-                    }
+                    },
                 })
             end,
             desc = "Flash",
@@ -30,6 +30,6 @@ return {
                 require("flash").treesitter()
             end,
             desc = "Flash Treesitter",
-        }
-    }
+        },
+    },
 }
