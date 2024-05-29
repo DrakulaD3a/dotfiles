@@ -1,6 +1,7 @@
 [user]
 	name = Lukas Strnad
 	email = strnad.lukas@proton.me
+	signingkey = /home/lukas/.ssh/id_ed25519.pub
 [merge]
 	tool = nvimdiff4
 [mergetool "nvimdiff4"]
@@ -12,3 +13,11 @@
 [core]
 	excludesfile = /home/lukas/.config/git/ignore
     editor = nvim
+[commit]
+	gpgsign = true
+[tag]
+    gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/lukas/.config/git/allowed_signers
