@@ -66,6 +66,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #mpd,
+#bluetooth,
 #window,
 #workspaces {
   margin-top: 0.2rem;
