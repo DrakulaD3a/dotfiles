@@ -17,6 +17,7 @@ return {
             lua = { "stylua" },
             python = { "black" },
             javascript = { "prettierd" },
+            typescript = { "prettierd" },
         },
         formatters = {
             injected = { options = { ignore_errors = true } },

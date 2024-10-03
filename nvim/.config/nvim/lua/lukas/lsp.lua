@@ -20,6 +20,7 @@ M.on_attach = function(client, bufnr)
 
     nmap("K", vim.lsp.buf.hover)
 
+    nmap("<leader>fm", vim.lsp.buf.format)
     nmap("<leader>ca", actions_preview.code_actions)
     nmap("<leader>rr", builtin.lsp_references)
     nmap("<leader>rn", vim.lsp.buf.rename)

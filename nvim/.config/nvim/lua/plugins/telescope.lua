@@ -12,8 +12,8 @@ return {
                 defaults = {
                     file_ignore_patterns = { "node_modules", ".git", "libraries", "cmake" },
                     mappings = {
-                        i = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
-                        n = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
+                        i = { ["<c-t>"] = require("trouble.sources.telescope").open },
+                        n = { ["<c-t>"] = require("trouble.sources.telescope").open },
                     },
                 },
             })

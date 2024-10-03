@@ -16,12 +16,3 @@ alias acli="arduino-cli"
 alias venv="source ~/.local/bin/activate_venv.sh"
 
 alias zig12="~/.zig/zig"
-
-function ya() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}

@@ -80,7 +80,7 @@ button:hover {
 
 #submap {
   font-weight: bold;
-  background-color: @theme_bg_color;
+  background-color: rgb(255, 0, 0);
 }
 
 .modules-left > widget:first-child > #workspaces {

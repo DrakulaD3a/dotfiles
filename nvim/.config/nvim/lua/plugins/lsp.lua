@@ -5,17 +5,8 @@ return {
         "williamboman/mason-lspconfig.nvim",
         { "folke/neodev.nvim", config = true },
         "hrsh7th/cmp-nvim-lsp",
+        "nvimtools/none-ls.nvim",
         "aznhe21/actions-preview.nvim",
-        {
-            "j-hui/fidget.nvim",
-            opts = {
-                notification = {
-                    window = {
-                        winblend = 0,
-                    },
-                },
-            },
-        },
     },
     config = function()
         local ok, mason = pcall(require, "mason")
@@ -40,7 +31,7 @@ return {
         end
 
         mason_lspconfig.setup({
-            ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "marksman" },
+            ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "marksman" },
         })
 
         require("lspconfig.ui.windows").default_options.border = "single"
@@ -113,11 +104,24 @@ return {
 
         require("lukas.lsp").additional_servers()
 
+        local ok, null_ls = pcall(require, "null-ls")
+        if not ok then
+            return
+        end
+
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.prettierd,
+                null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.stylua,
+            },
+        })
+
         vim.diagnostic.config({
             float = {
                 style = "minimal",
                 border = "rounded",
-                source = "always",
+                source = true,
                 header = "",
                 prefix = "",
             },

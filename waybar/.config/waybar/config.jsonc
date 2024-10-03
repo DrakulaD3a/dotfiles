@@ -1,7 +1,7 @@
 {
   "spacing": 4,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": [],
+  "modules-center": ["hyprland/submap"],
   "modules-right": ["custom/notification", "hyprland/language", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock"],
 
   "hyprland/workspaces": {
