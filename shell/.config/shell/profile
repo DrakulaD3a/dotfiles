@@ -4,7 +4,6 @@ export PATH="$PATH:$HOME/.local/bin"
 
 export EDITOR="nvim"
 export TERMINAL="foot"
-export BROWSER="firefox"
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   light -S 50

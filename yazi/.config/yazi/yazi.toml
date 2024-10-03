@@ -1,8 +1,6 @@
 [manager]
 layout = [1, 4, 3]
 sort_by = "natural"
-sort_sensitive = false
-sort_reverse = false
 sort_dir_first = true
 show_hidden = false
 show_symlink = true
@@ -10,26 +8,15 @@ show_symlink = true
 [opener]
 folder = [{ run = '$EDITOR "$@"', block = true, desc = "Open with $EDITOR" }]
 text = [{ run = '$EDITOR "$@"', block = true, desc = "Open with $EDITOR" }]
-image = [
-    { run = 'imv "$@"', desc = "Open with image viewer" },
-    { run = 'gimp "$@"', desc = "Open with gimp" },
-]
 pdf = [{ run = 'zathura "$@"', desc = "Open with pdf viewer" }]
 
-# FIXME: Doesn't work
 [open]
 rules = [
-    { mime = "text/*", use = "text" },
-    { mime = "image/*", use = "image" },
+    { mime = "text/*", use = [ "text" ] },
+    { mime = "image/*", use = [ "open", "reveal" ] },
 
-    { name = "*.pdf", use = [
-        "pdf",
-        "browser",
-    ] },
-    { name = "*.html", use = [
-        "browser",
-        "text",
-    ] },
+    { mime = "application/json", use = [ "text", "reveal" ] },
+    { mime = "application/pdf", use = [ "open", "reveal" ] },
 ]
 
 [plugin]
