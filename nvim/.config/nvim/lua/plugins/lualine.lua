@@ -5,6 +5,7 @@ return {
         options = {
             section_separators = "",
             component_separators = "",
+            globalstatus = true,
         },
         sections = {
             lualine_a = { "mode" },

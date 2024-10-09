@@ -48,6 +48,6 @@ o.fillchars = { eob = " " }
 
 o.signcolumn = "yes"
 
-g.perl_host_prog = "/usr/bin/perl"
+g.loaded_perl_provider = 0
 
 vim.filetype.add({ extension = { wgsl = "wgsl" } })

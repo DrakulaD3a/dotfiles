@@ -24,8 +24,6 @@ eval "$(zoxide init zsh)"
 
 export PATH=$PATH:/usr/local/go/bin:/home/lukas/.local/share/gem/ruby/3.0.0/bin 
 
-eval $(perl -I$HOME/.local/share/perl5/lib/perl5/ -Mlocal::lib=$HOME/.local/share/perl5)
-
 # bun completions
 [ -s "/home/lukas/.bun/_bun" ] && source "/home/lukas/.bun/_bun"
 
