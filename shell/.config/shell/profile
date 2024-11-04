@@ -43,3 +43,8 @@ export NODE_OPTIONS=--no-deprecation
 export PATH=/home/lukas/.cache/rebar3/bin:$PATH
 
 eval "$(fzf --zsh)"
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/lukas/.zsh/completions:"* ]]; then export FPATH="/home/lukas/.zsh/completions:$FPATH"; fi
+
+. "/home/lukas/.deno/env"
