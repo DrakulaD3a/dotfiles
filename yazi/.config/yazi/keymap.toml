@@ -4,4 +4,9 @@ prepend_keymap = [
     { on = [
         "T",
     ], run = "tab_close", desc = "Close tab" },
+
+    { on = [
+        "g",
+        "d",
+    ], run = "cd ~/personal/downloads/", desc = "Go to the downloads directory" },
 ]
