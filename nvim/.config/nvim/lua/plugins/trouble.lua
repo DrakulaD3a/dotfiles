@@ -8,7 +8,9 @@ return {
         end
 
         trouble.setup({
-            position = "right",
+            win = {
+                position = "right",
+            },
         })
 
         vim.keymap.set("n", "<leader>xx", function()
@@ -24,10 +26,10 @@ return {
             trouble.open({ mode = "todo" })
         end)
         vim.keymap.set("n", "<C-c>", function()
-            trouble.next({ skip_groups = true, jump = true })
+            trouble.next({ jump = true })
         end)
         vim.keymap.set("n", "<C-e>", function()
-            trouble.prev({ skip_groups = true, jump = true })
+            trouble.prev({ jump = true })
         end)
     end,
 }
