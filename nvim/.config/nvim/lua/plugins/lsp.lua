@@ -3,7 +3,6 @@ return {
     dependencies = {
         { "williamboman/mason.nvim", config = true },
         "williamboman/mason-lspconfig.nvim",
-        { "folke/neodev.nvim", config = true },
         "hrsh7th/cmp-nvim-lsp",
         "nvimtools/none-ls.nvim",
         "aznhe21/actions-preview.nvim",
@@ -69,22 +68,6 @@ return {
                 lspconfig[server].setup({
                     capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
                     on_attach = require("lukas.lsp").on_attach,
-                })
-            end,
-            ["lua_ls"] = function()
-                lspconfig["lua_ls"].setup({
-                    capabilities = cmp_nvim_lsp.default_capabilities(capabilities),
-                    on_attach = require("lukas.lsp").on_attach,
-                    settings = {
-                        Lua = {
-                            completion = {
-                                callSnippet = "Replace",
-                            },
-                            workspace = {
-                                checkThirdParty = false,
-                            },
-                        },
-                    },
                 })
             end,
             ["rust_analyzer"] = function()

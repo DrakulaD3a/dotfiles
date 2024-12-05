@@ -6,7 +6,7 @@ return {
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-nvim-lsp",
-            "kdheepak/cmp-latex-symbols", -- LaTeX symbols
+            { "folke/lazydev.nvim", ft = "lua", config = true }
         },
         config = function()
             local ok, cmp = pcall(require, "cmp")
@@ -39,8 +39,9 @@ return {
                     { name = "nvim_lsp" },
                     { name = "path" },
                     { name = "luasnip" },
-                    { name = "buffer", keyword_lenght = 5 },
+                    { name = "buffer",  keyword_lenght = 5 },
                     { name = "crates" },
+                    { name = "lazydev", group_index = 0 },
                 },
 
                 snippet = {
