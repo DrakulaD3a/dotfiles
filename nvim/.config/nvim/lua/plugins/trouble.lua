@@ -1,17 +1,16 @@
 return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+        win = {
+            position = "right",
+        },
+    },
     config = function()
         local ok, trouble = pcall(require, "trouble")
         if not ok then
             return
         end
-
-        trouble.setup({
-            win = {
-                position = "right",
-            },
-        })
 
         vim.keymap.set("n", "<leader>xx", function()
             trouble.toggle()
