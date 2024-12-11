@@ -1,15 +1,26 @@
 return {
     {
-        "saecki/crates.nvim",
-        event = { "BufRead Cargo.toml" },
-        opts = {},
+        "mrcjkb/rustaceanvim",
+        version = "^5",
+        lazy = false,
+        config = function()
+            vim.g.rustaceanvim = {
+                server = {
+                    default_settings = {
+                        ["rust-analyzer"] = {
+                            check = { allTargets = false },
+                            diagnostics = { enable = false },
+                            checkOnSave = { enable = false },
+                        },
+                    },
+                },
+                dap = {},
+            }
+        end,
     },
     {
-        "Canop/nvim-bacon",
-        ft = "rust",
-        keys = {
-            { "<leader>rb", "<cmd>BaconList<CR>", desc = "Bacon List" },
-        },
-        opts = {},
+        "saecki/crates.nvim",
+        event = { "BufRead Cargo.toml" },
+        config = true,
     },
 }
