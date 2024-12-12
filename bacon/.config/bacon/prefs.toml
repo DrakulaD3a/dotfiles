@@ -30,4 +30,4 @@ r = "job:run"
 b = "job:better-clippy"
 
 [jobs.better-clippy]
-command = ["cargo", "clippy", "--color", "always", "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery", "-W", "clippy::unwrap_used", "-W", "clippy::expect_used"]
+command = ["cargo", "clippy", "--color", "always", "--all", "--", "-W", "clippy::pedantic", "-W", "clippy::nursery", "-W", "clippy::unwrap_used"]
