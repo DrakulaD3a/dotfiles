@@ -9,8 +9,8 @@ return {
                     default_settings = {
                         ["rust-analyzer"] = {
                             check = { allTargets = false },
-                            diagnostics = { enable = false },
-                            checkOnSave = { enable = false },
+                            --[[ diagnostics = { enable = false },
+                            checkOnSave = { enable = false }, ]]
                         },
                     },
                 },

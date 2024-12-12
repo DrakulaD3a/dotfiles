@@ -81,7 +81,7 @@ M.additional_servers = {
     ocamllsp = M.default_config,
     hls = M.default_config,
     gleam = M.default_config,
-    bacon_ls = vim.tbl_extend("force", M.default_config, {
+    --[[ bacon_ls = vim.tbl_extend("force", M.default_config, {
         settings = {
             locationsFile = ".bacon-locations",
             baconSettings = {
@@ -89,7 +89,7 @@ M.additional_servers = {
                 command = "bacon better-clippy",
             },
         },
-    }),
+    }), ]]
 }
 
 M.setup_servers = function()
