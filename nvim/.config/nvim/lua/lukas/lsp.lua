@@ -56,6 +56,7 @@ M.without_formatting = vim.tbl_extend("force", M.default_config, {
 M.servers = {
     astro = M.without_formatting,
     cssls = M.default_config,
+    clangd = M.default_config,
     eslint = M.default_config,
     html = M.default_config,
     lua_ls = M.default_config,
