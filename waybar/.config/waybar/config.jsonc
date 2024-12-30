@@ -2,11 +2,14 @@
   "spacing": 4,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/submap"],
-  "modules-right": ["custom/notification", "hyprland/language", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock"],
+  "modules-right": ["custom/notification", "hyprland/language", "pulseaudio", "bluetooth", "network", "backlight", "battery", "clock"],
 
   "hyprland/workspaces": {
     "on-click": "activate",
     "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 5,
+    },
     "format": "{icon}",
     "format-icons": {
       "urgent": "",
@@ -61,8 +64,21 @@
     "tooltip": false
   },
 
+  "bluetooth": {
+    "format-connected": "󰂱 {device_alias}",
+    "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-on": "󰂯",
+    "on-click": "blueman-manager",
+    "tooltip": false
+  },
+
   "network": {
-    "format": "  {essid}",
+    "format": "{ifname}",
+    "format-wifi": "  {essid}",
+    "format-ethernet": "  {ifname}",
+    "format-disconnected": "Offline",
     "tooltip": false
   },
 
@@ -79,7 +95,7 @@
   },
 
   "backlight": {
-    "format": "{icon} {percent}",
+    "format": "{icon}  {percent}",
     "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
 
@@ -98,7 +114,7 @@
 
   "clock": {
     "timezone": "Europe/Prague",
-    "format": " {:%H:%M}",
+    "format": "{:%H:%M %a}",
     "format-alt": " {:%d.%m.%Y}",
     "tooltip": false
   }
