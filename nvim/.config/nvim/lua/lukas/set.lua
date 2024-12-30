@@ -1,7 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
-vim.cmd.colorscheme("kanagawa")
+vim.cmd.colorscheme("tokyonight")
 
 o.shell = "/usr/bin/zsh"
 
