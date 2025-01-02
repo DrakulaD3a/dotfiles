@@ -6,7 +6,6 @@ export EDITOR="nvim"
 export TERMINAL="foot"
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  light -S 50
   exec Hyprland
 fi
 
