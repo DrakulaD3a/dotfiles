@@ -1,6 +1,7 @@
 * {
   font-family: Roboto, FontAwesome, "Material Design Icons", Helvetica, Arial, sans-serif;
   font-size: 14px;
+  font-weight: 600;
   color: @theme_text_color;
 }
 
@@ -27,6 +28,7 @@ button {
   background-color: rgba(0, 0, 0, 0.3);
   min-width: 30px;
   border-radius: 6px;
+  border: 2px @theme_fg_color solid;
 }
 
 #workspaces button:hover {
@@ -34,7 +36,7 @@ button {
 }
 
 #workspaces button.active {
-  min-width: 40px;
+  min-width: 50px;
 }
 
 #mode {

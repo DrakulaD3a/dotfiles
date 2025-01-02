@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins:no-status", rev = "a8421d9" }, { use = "Reledia/glow", rev = "5ce76dc" }]
+deps = [{ use = "Reledia/glow", rev = "5ce76dc" }, { use = "yazi-rs/plugins:no-status", rev = "71c4fc2" }]
 
 [flavor]
-deps = []
+deps = [{ use = "dangooddd/kanagawa", rev = "240194c" }, { use = "BennyOe/tokyo-night", rev = "caa00ab" }]

@@ -48,5 +48,5 @@ if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile" ]; then
 fi
 
 if [[ $(tty) == *"pts"* ]]; then
-    fastfetch --config "examples/13"
+    fastfetch --config "examples/17"
 fi
