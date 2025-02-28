@@ -12,14 +12,6 @@ M.on_attach = function(client, bufnr)
     nmap("<leader>fm", require("conform").format)
     nmap("<leader>rn", vim.lsp.buf.rename)
 
-    nmap("g[", function()
-        vim.diagnostic.jump({ count = -1, float = true })
-    end)
-    nmap("g]", function()
-        vim.diagnostic.jump({ count = 1, float = true })
-    end)
-    nmap("gl", vim.diagnostic.open_float)
-
     if pcall(require, "telescope.builtin") then
         nmap("<leader>rr", require("telescope.builtin").lsp_references)
         nmap("gd", require("telescope.builtin").lsp_definitions)
