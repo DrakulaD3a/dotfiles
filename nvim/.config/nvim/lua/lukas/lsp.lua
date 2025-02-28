@@ -61,6 +61,7 @@ M.servers = {
     html = M.default_config,
     lua_ls = M.default_config,
     marksman = M.default_config,
+    ols = M.default_config,
     prismals = M.default_config,
     -- Using rustaceanvim for rust-analyzer
     --[[ rust_analyzer = vim.tbl_extend("force", M.default_config, {
@@ -72,6 +73,7 @@ M.servers = {
             },
         },
     }), ]]
+    sqls = M.default_config,
     tailwindcss = M.default_config,
     taplo = M.default_config,
     ts_ls = M.without_formatting,
