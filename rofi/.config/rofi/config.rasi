@@ -10,4 +10,4 @@ configuration {
 }
 
 @theme "/dev/null"
-@import "tokyonight.rasi"
+@import "kanagawa.rasi"
