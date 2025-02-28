@@ -7,8 +7,11 @@ return {
         },
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
-        "nvimtools/none-ls.nvim",
         "aznhe21/actions-preview.nvim",
+        {
+            "stevearc/conform.nvim",
+            config = true,
+        },
     },
     config = function()
         require("lspconfig.ui.windows").default_options.border = "single"
@@ -33,19 +36,6 @@ return {
 
         require("lukas.lsp").setup_servers()
 
-        local ok, null_ls = pcall(require, "null-ls")
-        if not ok then
-            return
-        end
-
-        null_ls.setup({
-            sources = {
-                null_ls.builtins.formatting.prettierd,
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.stylua,
-            },
-        })
-
         local x = vim.diagnostic.severity
         vim.diagnostic.config({
             float = {
@@ -62,5 +52,17 @@ return {
             severity_sort = true,
             title = false,
         })
+
+        require("conform").setup({
+            formatters_by_ft = {
+                lua = { "stylua" },
+                python = { "black" },
+                javascript = { "prettier", "prettierd", stop_after_first = true },
+                javascriptreact = { "prettier", "prettierd", stop_after_first = true },
+                typescript = { "prettier", "prettierd", stop_after_first = true },
+                typescriptreact = { "prettier", "prettierd", stop_after_first = true },
+            },
+        })
+        vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
 }

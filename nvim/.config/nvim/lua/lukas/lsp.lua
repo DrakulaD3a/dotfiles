@@ -9,7 +9,7 @@ M.on_attach = function(client, bufnr)
 
     nmap("K", vim.lsp.buf.hover)
 
-    nmap("<leader>fm", vim.lsp.buf.format)
+    nmap("<leader>fm", require("conform").format)
     nmap("<leader>rn", vim.lsp.buf.rename)
 
     nmap("g[", function()
