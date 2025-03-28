@@ -1,5 +1,19 @@
-[plugin]
-deps = [{ use = "Reledia/glow", rev = "5ce76dc" }, { use = "yazi-rs/plugins:no-status", rev = "71c4fc2" }]
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "5ce76dc"
+hash = "52e5f5c602962e7cbf874da28f52ba45"
 
-[flavor]
-deps = [{ use = "dangooddd/kanagawa", rev = "240194c" }, { use = "BennyOe/tokyo-night", rev = "caa00ab" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:no-status"
+rev = "71c4fc2"
+hash = "26907959d4d45f6258487f9bfe54a9c4"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "240194c"
+hash = "6687890dce56d85f8708adaaa21a5e59"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "caa00ab"
+hash = "e589a9fcd0dd8cef30ef5c2cc6b1dd1b"
