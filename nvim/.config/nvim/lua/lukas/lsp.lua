@@ -68,6 +68,7 @@ M.servers = {
     sqls = M.default_config,
     tailwindcss = M.default_config,
     taplo = M.default_config,
+    tinymist = M.without_formatting,
     ts_ls = M.without_formatting,
     zls = M.default_config,
 }

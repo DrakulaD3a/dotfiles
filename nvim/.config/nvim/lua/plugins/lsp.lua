@@ -62,6 +62,7 @@ return {
                 typescript = { "prettier", "prettierd", stop_after_first = true },
                 typescriptreact = { "prettier", "prettierd", stop_after_first = true },
                 c = { "clang-format" },
+                typst = { "typstyle" },
             },
         })
         vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
