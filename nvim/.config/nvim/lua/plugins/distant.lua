@@ -12,7 +12,7 @@ return {
                 ["*"] = {
                     lsp = {
                         ["catscii"] = {
-                            cmd = "/home/lukas/.local/share/nvim/mason/bin/rust-analyzer",
+                            cmd = os.getenv("HOME") .. "/.local/share/nvim/mason/bin/rust-analyzer",
                             root_dir = "catscii",
                             file_type = { "rust" },
                             on_exit = function(code, signal, client_id)
