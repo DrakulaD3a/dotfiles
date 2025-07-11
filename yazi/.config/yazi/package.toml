@@ -1,19 +1,19 @@
 [[plugin.deps]]
 use = "Reledia/glow"
-rev = "5ce76dc"
-hash = "52e5f5c602962e7cbf874da28f52ba45"
+rev = "bd3eaa5"
+hash = "92b5c58159a51c567f82b618cee2b78"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "71c4fc2"
-hash = "26907959d4d45f6258487f9bfe54a9c4"
+rev = "b886025"
+hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
-rev = "240194c"
-hash = "6687890dce56d85f8708adaaa21a5e59"
+rev = "31167ed"
+hash = "a04e157148549bacbb2831aab0e6e8cb"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
-rev = "caa00ab"
-hash = "e589a9fcd0dd8cef30ef5c2cc6b1dd1b"
+rev = "5f56364"
+hash = "c0bf69ad2c44005892d586e9693993c6"
