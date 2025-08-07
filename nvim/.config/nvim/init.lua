@@ -41,6 +41,7 @@ vim.pack.add({
 
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/stevearc/conform.nvim" },
+    { src = "https://github.com/mfussenegger/nvim-lint" },
 })
 
 require("oil").setup()
@@ -63,9 +64,22 @@ vim.lsp.config("lua_ls", {
         },
     },
 })
-vim.lsp.enable({ "lua_ls", "rust-analyzer", "clangd", "tinymist", "zls" })
-
-vim.diagnostic.config({ jump = { float = true } })
+vim.lsp.enable({
+    "lua_ls",
+    "rust_analyzer",
+    "clangd",
+    "tinymist",
+    "zls",
+    "ts_ls",
+    "tailwindcss",
+    "prismals",
+    "ocamllsp",
+    "hls",
+    "gleam",
+    "eslint",
+    "html",
+    "cssls",
+})
 
 require("conform").setup({
     formatters_by_ft = {
@@ -80,5 +94,38 @@ require("conform").setup({
 })
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 vim.keymap.set("n", "<leader>fm", require("conform").format)
+
+require("lint").linters_by_ft = {
+    sh = { "shellcheck" },
+    bash = { "shellcheck" },
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    callback = function()
+        require("lint").try_lint()
+    end,
+})
+
+require("nvim-treesitter.configs").setup({
+    ensure_installed = {
+        "rust",
+        "c",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "vimdoc",
+    },
+    modules = {},
+    ignore_install = {},
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
+    indent = {
+        enable = true,
+    },
+})
 
 vim.cmd.colorscheme("kanagawa")
