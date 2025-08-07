@@ -39,12 +39,12 @@ setopt autocd
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
-if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ]; then 
-    source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
-fi
-
 if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile" ]; then
     source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile"
+fi
+
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ]; then
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 fi
 
 if [[ $(tty) == *"pts"* ]]; then
