@@ -55,6 +55,10 @@ vim.keymap.set("n", "grr", builtin.lsp_references)
 vim.keymap.set("n", "gri", builtin.lsp_implementations)
 vim.keymap.set("n", "grt", builtin.lsp_type_definitions)
 
+vim.diagnostic.config({
+    jump = { on_jump = vim.diagnostic.open_float },
+    virtual_text = { prefix = "●" },
+})
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
@@ -99,7 +103,6 @@ require("lint").linters_by_ft = {
     sh = { "shellcheck" },
     bash = { "shellcheck" },
 }
-
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     callback = function()
         require("lint").try_lint()
