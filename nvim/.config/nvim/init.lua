@@ -95,6 +95,9 @@ require("conform").setup({
         c = { "clang-format" },
         typst = { "typstyle" },
     },
+    default_format_opts = {
+        lsp_format = "fallback",
+    },
 })
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 vim.keymap.set("n", "<leader>fm", require("conform").format)
