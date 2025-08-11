@@ -20,7 +20,7 @@ vim.o.incsearch = true
 vim.o.inccommand = "split"
 vim.o.swapfile = false
 vim.o.backup = false
-vim.o.undodir = os.getenv("HOME") .. "/.local/share/nvim/undo"
+vim.o.undodir = vim.fn.stdpath("data") .. "/undo"
 vim.o.undofile = true
 vim.o.updatetime = 50
 vim.o.virtualedit = "block"
@@ -28,6 +28,17 @@ vim.o.smartcase = true
 vim.o.laststatus = 3
 vim.o.signcolumn = "yes"
 vim.o.winborder = "solid"
+
+vim.api.nvim_create_augroup("FileTypes", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*.astro", "*.js*", "*.ts*", "*.css", "*.html", "*.ocaml", "*.php", "*.gleam", "*.vue" },
+    group = "FileTypes",
+    callback = function()
+        vim.o.tabstop = 2
+        vim.o.shiftwidth = 2
+        vim.o.softtabstop = 2
+    end,
+})
 
 vim.pack.add({
     { src = "https://github.com/rebelot/kanagawa.nvim" },
@@ -42,6 +53,8 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/stevearc/conform.nvim" },
     { src = "https://github.com/mfussenegger/nvim-lint" },
+
+    { src = "https://github.com/L3MON4D3/LuaSnip" },
 })
 
 require("oil").setup()
@@ -50,13 +63,17 @@ vim.keymap.set("n", "-", ":Oil<CR>")
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files)
 vim.keymap.set("n", "<leader>fb", builtin.buffers)
-vim.keymap.set("n", "<leader>fs", require("custom.multipick").multigrep)
+vim.keymap.set("n", "<leader>fs", require("multipick").multigrep)
 vim.keymap.set("n", "grr", builtin.lsp_references)
 vim.keymap.set("n", "gri", builtin.lsp_implementations)
 vim.keymap.set("n", "grt", builtin.lsp_type_definitions)
 
 vim.diagnostic.config({
-    jump = { on_jump = vim.diagnostic.open_float },
+    jump = {
+        on_jump = function()
+            vim.diagnostic.open_float({ focus = false })
+        end,
+    },
     virtual_text = { prefix = "●" },
 })
 vim.lsp.config("lua_ls", {
@@ -133,5 +150,17 @@ require("nvim-treesitter.configs").setup({
         enable = true,
     },
 })
+
+require("luasnip").setup({ enable_autosnippets = true })
+require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/snippets" })
+
+local ls = require("luasnip")
+vim.keymap.set("i", "<C-e>", ls.expand)
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+    ls.jump(1)
+end)
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+    ls.jump(-1)
+end)
 
 vim.cmd.colorscheme("kanagawa")
