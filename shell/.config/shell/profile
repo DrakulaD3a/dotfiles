@@ -48,8 +48,4 @@ if [[ ":$FPATH:" != *":/home/lukas/.zsh/completions:"* ]]; then export FPATH="/h
 
 . "/home/lukas/.deno/env"
 
-export JAVA_HOME=/opt/android-studio/jbr
-export ANDROID_HOME="$HOME/Android/Sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
-
 export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
